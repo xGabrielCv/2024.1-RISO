@@ -8,4 +8,6 @@ extra_css:
 
 nav:
   - Sobre: index.md
-  - Historia da Facção: faccao.md
+  - Sobre a faccao:
+    - Historia da faccao: Faccao/faccao.md
+    - Integrantes: Faccao/integrantes.md

@@ -6,8 +6,6 @@
 O problema identificado reside na dificuldade de medir de forma quantitativa o nível de satisfação dos clientes em uma sorveteria. Atualmente, o proprietário do estabelecimento não possui meios eficazes para capturar e analisar a felicidade dos consumidores, o que é fundamental para aprimorar a experiência no local. Para aprofundar o entendimento deste problema, foi empregado um diagrama de Ishikawa, auxiliado pela técnica dos 5 Porquês, visando descobrir as causas raízes e seus principais motivadores.
 <center>
 
-![Problema](assets/problema_ishikawa.png)
-
 Figura 1 - Diagrama de Ishikawa do grupo (fonte: autores, 2023)
 
 </center>
@@ -51,7 +49,9 @@ Optamos pela metodologia de desenvolvimento agil SCRUM, pela facilidade, eficiê
 
 ### 3.2 Diagrama de Fluxo de Trabalho
 
-![Gupta](assets/gupta_equipe_desenvolvimento.png)
+![Diagrama fluxo do trabalho](assets/diagrama.png)
+Figura x - Diagrama de Fluxo de Trabalho
+
 
 Nome da Atividade | Método | Ferramenta | Entrega |
 ------------- | --------- | ------ | ----------
@@ -63,7 +63,6 @@ Testes | Manuais e automáticos | JUnit, PyTest | Relatórios de Testes  |
 CI/CD | Integração | Github | Pipeline CI/CD  |
 Usabilidade | Análise Heurística | Dashboard | Relatórios de usabilidade  |
 
-Figura 4 - Modelo Gupta para equipe de desenvolvimento (fonte: Gupta, 2019)
 
 ## 4. LIÇÕES APRENDIDAS
 ### Unidade 1

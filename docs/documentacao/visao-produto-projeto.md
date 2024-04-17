@@ -14,17 +14,17 @@ Figura 1 - Diagrama de Ishikawa do grupo (fonte: autores, 2023)
 
 ### 1.2	Declaração de Posição do Produto
 
-Para | Alunos da FGA 
+Para | Proprietários e gerentes de sorveterias 
 ---- | ---------------------------
-Quem | Precisa de carona solidária e não possui meios organizados para encontrá-la ou ofertá-la
-O UniBuddy | É um sistema de organização de caronas solidárias
-Que |  Auxílio na organização de caronas solidárias, ofertando possibilidade de encontrar pessoas que ofereçam ou precisem receber a carona para determinado local
-Ao contrário | Passe-livre, Grupos de carona no WhatsApp, Telegram ou afins
-Nosso produto | Ofertará caronas solidárias acessíveis e organizadas
+Quem | Deseja medir e entender a satisfação dos clientes de forma precisa e em tempo real
+O RISO | É um software de análise de expressões faciais baseado em visão computacional
+Que |  Monitora e quantifica os sorrisos dos clientes, proporcionando um indicativo claro de sua satisfação durante o atendimento
+Ao contrário | De métodos tradicionais de feedback como formulários e enquetes, que podem não capturar o sentimento imediato e espontâneo dos clientes
+Nosso produto | Oferecerá uma medição dinâmica e interativa da satisfação do cliente, permitindo intervenções imediatas para melhorar a experiência do usuário
 
 ### 1.3	Objetivos do Produto
 
-O objetivo do UniBuddy é auxiliar, de forma organizada e prática, no encontro entre motoristas dispostos a oferecer carona solidária e passageiros que precisam recebê-las. Isso será feito através de uma aplicação que se nutre a partir dos dados dos usuários para disponibilizar informações úteis e organizadas para os interessados, facilitando o encontro de parceiros com o mesmo destino e de confiança. 
+O objetivo principal do RISO é oferecer aos proprietários e gerentes de sorveterias uma ferramenta avançada e eficaz para medir a satisfação dos clientes de forma precisa e em tempo real. Isso será realizado através de um software inovador que utiliza tecnologia de visão computacional para detectar e analisar sorrisos durante o atendimento. Ao utilizar essas informações, o software ajudará a identificar momentos de alegria e satisfação dos clientes, permitindo que o estabelecimento aprimore a qualidade do serviço e produto oferecido.
 
 ### 1.4	Tecnologias a Serem Utilizadas
 - Javascript
@@ -422,17 +422,4 @@ Em resumo, aprendemos com a engenharia de requisitos durante todo as unidades so
 
 Data | Versão | Descrição | Autor | Revisores
 ---- | ------ | --------- | ----- | ---------
-24/04/23 | 0.1 | Criação do documento | Juan | Pedro Henrique
-25/04/23 | 0.2 | Evolução do documento | Juan | Pedro Henrique
-26/04/23 | 0.3 | Correções do documento | Juan | Pedro Henrique
-26/04/23 | 0.4 | Correções do documento | Juan | João
-26/04/23 | 1.0 | Primeira versão de entrega | Juan | João, Juan, Leonardo, Pedro Henrique, Pedro Lucas
-27/04/23 | 1.1 | Inclusão lições aprendidas | Juan | Pedro Lucas
-19/05/23 | 1.2 | Correção do Planejamento do projeto, das fases e da matriz de comunicação | Juan | João
-22/05/23 | 1.3 | Inserção de detalhes na matriz de comunicação, revisão da análise de risco e critérios de replanejamento | Juan | João
-24/05/23 | 1.4 | Correção do Planejamento do projeto, da abordagem de desenvolvimneto, das entregas, e da matriz de comunicação, inclusão de item no histórico de replanejamento | Juan | João
-25/05/23 | 2.0 | Segunda versão de entrega | Juan, João, Pedro Henrique, Pedro Lucas | João
-17/06/23 | 2.1 | Correção do Planejamento do projeto, Histórico de Riscos, Histórico de Replanejamento, Lições aprendidas, Pontos de melhoria | Juan | João e Pedro Henrique
-22/06/23 | 2.2 | Correção do Planejamento do projeto, Histórico de Replanejamento | Juan | João e Pedro Henrique
-27/06/23 | 2.2 | Correção do Planejamento do projeto e Histórico de Riscos | Juan | João e Pedro Henrique
-11/07/23 | 3.1 | Atualização Planejamento | Juan | Pedro Henrique
+17/04/24 | 0.1 | Criação do documento | Joyce | 

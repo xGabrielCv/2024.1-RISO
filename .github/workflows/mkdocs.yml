@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # ou sua branch padrão
+      - DOCS-git_pages
 
 jobs:
   deploy:

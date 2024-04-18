@@ -27,13 +27,14 @@
 
 Este projeto oferece as seguintes funcionalidades:
 
-• 
+• **Detecção de Sorrisos**: O sistema usa câmeras para identificar quando clientes sorriem ao comerem sorvetes, quantificando a satisfação de forma divertida.
 
-• 
+• **Medição da Felicidade do Cliente**: Analisa os sorrisos para avaliar o quão felizes os clientes estão com os produtos da sorveteria.
 
-• 
+• **Pesquisa em Reconhecimento Facial**: Utiliza os dados dos sorrisos para melhorar a tecnologia de reconhecimento facial .
 
-• 
+• **Expansão para Diferentes Culturas**: Prepara o caminho para futuras pesquisas adaptando a tecnologia para reconhecer expressões faciais em várias culturas, melhorando o atendimento ao cliente em escala global.
+
 <!-- Título centralizado -->
 <div align="center">
   <h2>🤞 Como executar o projeto </h2>

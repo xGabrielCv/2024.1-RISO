@@ -2,6 +2,8 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/mdsreq-fga-unb/2024.1-RISO-?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/mdsreq-fga-unb/2024.1-RISO-?style=for-the-badge)
 ![GitHub views](https://komarev.com/ghpvc/?username=req-fga-unb&repo=2024.1-RISO-&color=blueviolet&style=for-the-badge&label=Views)
+<img src="http://img.shields.io/static/v1?label=STATUS&message=Andamento&color=yellow&style=for-the-badge"/>
+
 
 <!-- Título centralizado -->
 <div align="center">

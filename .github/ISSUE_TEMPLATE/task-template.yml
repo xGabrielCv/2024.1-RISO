@@ -6,7 +6,7 @@ body:
   - type: textarea
     id: text-zone1
     attributes:
-      label: Task a ser executada:
+      label: Task a ser executada.
       description: Expecifique o que os responsáveis pela atividade deverão fazer em prol do andamento do Projeto RISO. (Esta task não poderá estar se tornar US ou representar uma nova funcionalidade no software.)
       placeholder: Escreva aqui...
     validations:
@@ -28,4 +28,4 @@ body:
       label: Detalhes adicionais?
       description: Acrescente informações que possam ser pertinentes para o time.
       placeholder: |
-        Escreva ou deixe em branco.
+        Escreva ou deixe em branco...

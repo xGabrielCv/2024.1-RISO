@@ -6,7 +6,7 @@ const connectDatabase = () => {
     console.log('Wait connection to the database');
     mongoose.connect(
         process.env.MONGODB_URL, {
-          dbName: "dev_riso"
+          dbName: process.env.DB_NAME
         }
     )
     .then(() => console.log('MongoDB Atlas Connected'))

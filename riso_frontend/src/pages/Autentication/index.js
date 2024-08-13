@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import { createUser, findOne } from "../../services/userServices";
@@ -49,21 +49,33 @@ function Autentication() {
         }
     }
 
-    // ARRUMAR DEPOIS:
+    useEffect(() => {
+        const btnSignin = document.querySelector("#signin");
+        const btnSignup = document.querySelector("#signup");
+        const body = document.querySelector("body");
 
-    var btnSignin = document.querySelector("#signin");
-    var btnSignup = document.querySelector("#signup");
+        if (btnSignin && btnSignup) {
+            btnSignin.addEventListener("click", function () {
+                body.className = "sign-in-js";
+            });
 
-    var body = document.querySelector("body");
+            btnSignup.addEventListener("click", function () {
+                body.className = "sign-up-js";
+            });
+        }
 
+        return () => {
+            if (btnSignin && btnSignup) {
+                btnSignin.removeEventListener("click", function () {
+                    body.className = "sign-in-js";
+                });
 
-    btnSignin.addEventListener("click", function () {
-    body.className = "sign-in-js"; 
-    });
-
-    btnSignup.addEventListener("click", function () {
-        body.className = "sign-up-js";
-    })
+                btnSignup.removeEventListener("click", function () {
+                    body.className = "sign-up-js";
+                });
+            }
+        };
+    }, []);
 
     return (
         <div class="container">
@@ -120,7 +132,7 @@ function Autentication() {
                             <input type="password" placeholder="Senha" onChange={handleChangePassword}/>
                         </label>
                     
-                        <a class="password" href="#">Esqueci minha senha?</a>
+                        <a class="password" href="/">Esqueci minha senha?</a>
                         <button class="btn btn-second" onClick={loginUser}>Entrar</button>
                     </form>
                 </div>

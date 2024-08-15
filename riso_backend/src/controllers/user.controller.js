@@ -32,7 +32,7 @@ const createUser = async (req, res) => {
     });
 
     if(!user){
-      return res.status(403).send({local: 'On req', message: 'Error creating User' });
+      return res.status(403).send({ message: 'Error creating User' });
     }
     
     return res.status(201).send({message: 'User created sucefully', user: user });
@@ -49,21 +49,21 @@ const findOne = async (req, res) => {
     const {email, password} = req.query;
 
     if(!email || !password){
-      return res.status(400).send({ message: 'Submit all fields for login' })
+      return res.status(400).send({ message: 'Submit all fields for login', substatus: 1})
     }
     
     const user = await userService.findOne({ email });
     if (!user) {
-      return res.status(404).send({ local: 'on req', message: 'User not found'});
+      return res.status(404).send({ message: 'User not found', substatus: 1});
     }
 
     if (user.password != bcrypt.hashSync(password, salt)) {
-      return res.status(400).send({ local: 'on req', message: 'Password or email is invalid'});
+      return res.status(400).send({ message: 'Password or email is invalid', substatus: 2});
     }
     
     return res.status(200).send(user);
   }catch(err) {
-    return res.status(500).send({ local: 'On req', message: err.message });
+    return res.status(500).send({ message: err.message });
   }
 }
 

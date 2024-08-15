@@ -47,6 +47,11 @@ function Autentication() {
                     setTimeout(() => {
                         setWarning(0);
                     }, 2000);
+                } else if (err.response.status === 404 && !err.response.data.substatus) {
+                    setWarning(7);
+                    setTimeout(() => {
+                        setWarning(0);
+                    }, 2000);
                 } else if (err.response.status === 500) {
                     setWarning(6);
                     setTimeout(() => {
@@ -78,8 +83,13 @@ function Autentication() {
                     setTimeout(() => {
                         setWarning(0);
                     }, 2000);
-                } else if (err.response.status === 404) {
+                } else if (err.response.status === 404 && err.response.data.substatus === 1) {
                     setWarning(2);
+                    setTimeout(() => {
+                        setWarning(0);
+                    }, 2000);
+                } else if (err.response.status === 404 && !err.response.data.substatus) {
+                    setWarning(7);
                     setTimeout(() => {
                         setWarning(0);
                     }, 2000);
@@ -165,6 +175,8 @@ function Autentication() {
                             <p class="warning">Serviço de dados inativo!</p>
                         ) : warning === 6 ? (
                             <p class="warning">Houve algum problema nosso!</p>
+                        ) : warning === 7 ? (
+                            <p class="warning">Serviço de dados inativo!</p>
                         ) : (
                             <div style={{height: 10}}></div>
                         )}
@@ -201,6 +213,8 @@ function Autentication() {
                         ) : warning === 6 ? (
                             <p class="warning">Houve algum problema nosso!</p>
                         ) : warning === 5 ? (
+                            <p class="warning">Serviço de dados inativo!</p>
+                        ) : warning === 7 ? (
                             <p class="warning">Serviço de dados inativo!</p>
                         ) : (
                             <div style={{height: 10}}></div>

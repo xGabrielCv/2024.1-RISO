@@ -10,6 +10,7 @@ Antes de começar, certifique-se de ter os seguintes softwares instalados em sua
 - **NPM (versão compatível com Node.js 20)**
 - **Git** (para controle de versão)
 - **MongoDB** (caso utilize um banco de dados local)
+- **Nodemon** (Caso rode o banco em modo de desenvolvimento)
 
 ## Instalação
 

@@ -22,7 +22,7 @@ const createUser = async (req, res) => {
     const {name, email, password} = req.body;
     
     if(!name || !email || !password){
-      return res.status(400).send({ message: 'Submit all fields for registration' })
+      return res.status(400).send({ message: 'Submit all fields for registration', substatus: 1 })
     }
 
     const user = await userService.createService({
@@ -32,11 +32,14 @@ const createUser = async (req, res) => {
     });
 
     if(!user){
-      return res.status(400).send({local: 'On req', message: 'Error creating User' });
+      return res.status(403).send({local: 'On req', message: 'Error creating User' });
     }
     
-    return res.status(200).send({message: 'User created sucefully', user: user });
+    return res.status(201).send({message: 'User created sucefully', user: user });
   }catch(err){
+    if (err.code === 11000) {  // Código de erro para violação de chave única em MongoDB/Mongoose
+      return res.status(400).send({ message: 'Email already in use', substatus: 2 });
+    }
     return res.status(500).send({ message: err.message });  
   }
 };
@@ -55,7 +58,7 @@ const findOne = async (req, res) => {
     }
 
     if (user.password != bcrypt.hashSync(password, salt)) {
-      return res.status(400).send({ local: 'on req', message: 'Password or email is invalid'})
+      return res.status(400).send({ local: 'on req', message: 'Password or email is invalid'});
     }
     
     return res.status(200).send(user);

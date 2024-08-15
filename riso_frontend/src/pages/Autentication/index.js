@@ -29,50 +29,78 @@ function Autentication() {
         setPassword(event.target.value);
     }
 
-    async function upUser(event){
+    async function upUser(event) {
         event.preventDefault(); 
         try {
             const response = await createUser(name, email, password);
             console.log(response);
         } catch (err) {
-            if(err.response.status === 400 && err.response.data.substatus === 1) {
-                setWarning(3);
+            // Verifica se err.response está definido
+            if (err.response) {
+                if (err.response.status === 400 && err.response.data.substatus === 1) {
+                    setWarning(3);
+                    setTimeout(() => {
+                        setWarning(0);
+                    }, 2000);
+                } else if (err.response.status === 400 && err.response.data.substatus === 2) {
+                    setWarning(4);
+                    setTimeout(() => {
+                        setWarning(0);
+                    }, 2000);
+                } else if (err.response.status === 500) {
+                    setWarning(6);
+                    setTimeout(() => {
+                        setWarning(0);
+                    }, 2000);
+                } else {
+                    console.log(err);
+                }
+            } else {
+                console.error("Erro de conexão, banco inativo ou problema inesperado:", err.message);
+                setWarning(5);
                 setTimeout(() => {
                     setWarning(0);
                 }, 2000);
             }
-            if(err.response.status === 400 && err.response.data.substatus === 2) {
-                setWarning(4);
-                setTimeout(() => {
-                    setWarning(0);
-                }, 2000);
-            }
-            else{console.log(err)}
         }
     }
 
-    async function loginUser(event){
+    async function loginUser(event) {
         event.preventDefault();
         try {
             await findOne(email, password);
             setWarning(false);
             navigate('/homePage');
         } catch (err) {
-            if(err.response.status === 400) {
-                setWarning(1);
+            if (err.response) {
+                if (err.response.status === 400) {
+                    setWarning(1);
+                    setTimeout(() => {
+                        setWarning(0);
+                    }, 2000);
+                } else if (err.response.status === 404) {
+                    setWarning(2);
+                    setTimeout(() => {
+                        setWarning(0);
+                    }, 2000);
+                } else if (err.response.status === 500) {
+                    setWarning(6);
+                    setTimeout(() => {
+                        setWarning(0);
+                    }, 2000);
+                } else {
+                    console.log(err);
+                }
+            } else {
+                console.error("Erro de conexão, banco inativo ou problema inesperado:", err.message);
+                setWarning(5);
                 setTimeout(() => {
                     setWarning(0);
                 }, 2000);
             }
-            else if(err.response.status === 404) {
-                setWarning(2);
-                setTimeout(() => {
-                    setWarning(0);
-                }, 2000);
-            }
-            else {console.log(err)}
         }
     }
+    
 
     useEffect(() => {
         const btnSignin = document.querySelector("#signin");
@@ -133,6 +161,10 @@ function Autentication() {
                             <p class="warning">Preencha todos os campos!</p>
                         ) : warning === 4 ? (
                             <p class="warning">Este email já foi cadastrado!</p>
+                        ) : warning === 5 ? (
+                            <p class="warning">Serviço de dados inativo!</p>
+                        ) : warning === 6 ? (
+                            <p class="warning">Houve algum problema nosso!</p>
                         ) : (
                             <div style={{height: 10}}></div>
                         )}
@@ -166,6 +198,10 @@ function Autentication() {
                             <p class="warning">Senha ou Email incorretos!</p>
                         ) : warning === 2 ? (
                             <p class="warning">Conta não Registrada!</p>
+                        ) : warning === 6 ? (
+                            <p class="warning">Houve algum problema nosso!</p>
+                        ) : warning === 5 ? (
+                            <p class="warning">Serviço de dados inativo!</p>
                         ) : (
                             <div style={{height: 10}}></div>
                         )}

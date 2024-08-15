@@ -242,6 +242,13 @@ input:-webkit-autofill
     animation: deslocamentoDir 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
 }
 
+.warning {
+    height: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: red;
+}
+
 /*ANIMAÇÃOO CSS PARA O CONTEÚDO*/
 
 @keyframes deslocamentoEsq {

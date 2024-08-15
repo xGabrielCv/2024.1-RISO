@@ -12,6 +12,7 @@ function Autentication() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [warning, setWarning] = useState(0);
 
     //Mudando o dado no input do email
     const handleChangeName = (event) => {
@@ -34,18 +35,42 @@ function Autentication() {
             const response = await createUser(name, email, password);
             console.log(response);
         } catch (err) {
-            console.log(err);
+            if(err.response.status === 400 && err.response.data.substatus === 1) {
+                setWarning(3);
+                setTimeout(() => {
+                    setWarning(0);
+                }, 2000);
+            }
+            if(err.response.status === 400 && err.response.data.substatus === 2) {
+                setWarning(4);
+                setTimeout(() => {
+                    setWarning(0);
+                }, 2000);
+            }
+            else{console.log(err)}
         }
     }
 
     async function loginUser(event){
         event.preventDefault();
         try {
-            const response = await findOne(email, password);
-            console.log(response);
+            await findOne(email, password);
+            setWarning(false);
             navigate('/homePage');
         } catch (err) {
-            console.log(err);
+            if(err.response.status === 400) {
+                setWarning(1);
+                setTimeout(() => {
+                    setWarning(0);
+                }, 2000);
+            }
+            else if(err.response.status === 404) {
+                setWarning(2);
+                setTimeout(() => {
+                    setWarning(0);
+                }, 2000);
+            }
+            else {console.log(err)}
         }
     }
 
@@ -104,7 +129,13 @@ function Autentication() {
                             <i class="fas fa-lock icon-modify"></i>
                             <input type="password" placeholder="Senha" value={password} onChange={handleChangePassword}/>
                         </label>
-                        
+                        {warning === 3 ? (
+                            <p class="warning">Preencha todos os campos!</p>
+                        ) : warning === 4 ? (
+                            <p class="warning">Este email já foi cadastrado!</p>
+                        ) : (
+                            <div style={{height: 10}}></div>
+                        )}
                         
                         <button class="btn btn-second" onClick={upUser}>Criar</button>        
                     </form>
@@ -131,7 +162,14 @@ function Autentication() {
                             <i class="fas fa-lock icon-modify"></i>
                             <input type="password" placeholder="Senha" onChange={handleChangePassword}/>
                         </label>
-                    
+                        {warning === 1 ? (
+                            <p class="warning">Senha ou Email incorretos!</p>
+                        ) : warning === 2 ? (
+                            <p class="warning">Conta não Registrada!</p>
+                        ) : (
+                            <div style={{height: 10}}></div>
+                        )}
+
                         <a class="password" href="/">Esqueci minha senha?</a>
                         <button class="btn btn-second" onClick={loginUser}>Entrar</button>
                     </form>

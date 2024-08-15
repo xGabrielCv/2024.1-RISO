@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./estilo.css";
+import './estilo.css';
 
 function RegisterUnit() {
     
@@ -50,16 +50,17 @@ function RegisterUnit() {
     }
 
     return (
+       
         <div className="container">
-            <div className="content">
+            <div>
                 <div className="second-column">
                     <h2 className="title title-second">Registrar Nova Unidade/Empresa</h2>
                     <form className="form" onSubmit={submitForm}>
                         <label className="label-input">
-                            <input type="text" placeholder="Nome da Unidade/Empresa" value={unitName} onChange={handleChangeUnitName} required/>
+                            <input type="text" placeholder="Nome Unidade/Empresa" value={unitName} onChange={handleChangeUnitName} required/>
                         </label>
                         <label className="label-input">
-                            <input type="number" placeholder="Número Aproximado de Funcionários" value={employeeNumber} onChange={handleChangeEmployeeNumber} required/>
+                            <input type="number" placeholder="Númerode Funcionários" value={employeeNumber} onChange={handleChangeEmployeeNumber} required/>
                         </label>
                         <label className="label-input">
                             <input type="text" placeholder="CNPJ" value={cnpj} onChange={handleChangeCnpj} required/>

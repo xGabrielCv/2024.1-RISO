@@ -1,0 +1,32 @@
+.title-second {
+    color: #58af9b;
+    white-space: nowrap; /* Impede a quebra de linha */
+    width: 100%; /* ou definir uma largura específica, como 200px */
+}
+
+
+.label-input input {
+    width: 150%; /* Aumenta a largura para 100% do contêiner */
+    padding: 15px; /* Aumenta o espaço interno dos inputs */
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    height: auto; /* Permite que o campo ajuste sua altura conforme o conteúdo */
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura e altura */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Garante que o contêiner ocupe 100% da altura da viewport */
+    width: 100%; /* Garante que o contêiner ocupe 100% da largura da viewport */
+    background-color: #ecf0f1; /* Cor de fundo */
+}
+
+.second-column {
+    width: 100%; /* Aumenta a largura da coluna */
+    max-width: 600px; /* Define uma largura máxima para a coluna */
+    padding: 20px;
+    background-color: #fff; /* Cor de fundo da coluna */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar o formulário */
+}

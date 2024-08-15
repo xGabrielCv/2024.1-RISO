@@ -141,88 +141,90 @@ function Autentication() {
     }, []);
 
     return (
-        <div class="container">
-            <div class="content first-content">
-                <div class="first-column">
-                    <h2 class="title title-primary">Bem vindo!</h2>
-                    <p class="description description-primary">Para manter-se conectado conosco.</p>
-                    <p class="description description-primary">Por favor, faça login com suas informações pessoais.</p>
-                    <button id="signin" class="btn btn-primary">Entrar</button>
-                </div>    
-                <div class="second-column">
-                    <h2 class="title title-second">Criar conta</h2>
-                    <p class="description description-second">ou use o seu email para registro</p>
-                    <form class="form">
-                        <label class="label-input" for="">
-                            <i class="far fa-user icon-modify"></i>
-                            <input type="text" placeholder="Nome" value={name} onChange={handleChangeName}/>
-                        </label>
-                        
-                        <label class="label-input" for="">
-                            <i class="far fa-envelope icon-modify"></i>
-                            <input type="email" placeholder="Email" value={email} onChange={handleChangeEmail}/>
-                        </label>
-                        
-                        <label class="label-input" for="">
-                            <i class="fas fa-lock icon-modify"></i>
-                            <input type="password" placeholder="Senha" value={password} onChange={handleChangePassword}/>
-                        </label>
-                        {warning === 3 ? (
-                            <p class="warning">Preencha todos os campos!</p>
-                        ) : warning === 4 ? (
-                            <p class="warning">Este email já foi cadastrado!</p>
-                        ) : warning === 5 ? (
-                            <p class="warning">Serviço de dados inativo!</p>
-                        ) : warning === 6 ? (
-                            <p class="warning">Houve algum problema nosso!</p>
-                        ) : warning === 7 ? (
-                            <p class="warning">Serviço de dados inativo!</p>
-                        ) : (
-                            <div style={{height: 10}}></div>
-                        )}
-                        
-                        <button class="btn btn-second" onClick={upUser}>Criar</button>        
-                    </form>
+        <div class="AutenticationPage">
+            <div class="container">
+                <div class="content first-content">
+                    <div class="first-column">
+                        <h2 class="title title-primary">Bem vindo!</h2>
+                        <p class="description description-primary">Para manter-se conectado conosco.</p>
+                        <p class="description description-primary">Por favor, faça login com suas informações pessoais.</p>
+                        <button id="signin" class="btn btn-primary">Entrar</button>
+                    </div>
+                    <div class="second-column">
+                        <h2 class="title title-second">Criar conta</h2>
+                        <p class="description description-second">ou use o seu email para registro</p>
+                        <form class="form">
+                            <label class="label-input" for="">
+                                <i class="far fa-user icon-modify"></i>
+                                <input type="text" placeholder="Nome" value={name} onChange={handleChangeName}/>
+                            </label>
+                            
+                            <label class="label-input" for="">
+                                <i class="far fa-envelope icon-modify"></i>
+                                <input type="email" placeholder="Email" value={email} onChange={handleChangeEmail}/>
+                            </label>
+                            
+                            <label class="label-input" for="">
+                                <i class="fas fa-lock icon-modify"></i>
+                                <input type="password" placeholder="Senha" value={password} onChange={handleChangePassword}/>
+                            </label>
+                            {warning === 3 ? (
+                                <p class="warning">Preencha todos os campos!</p>
+                            ) : warning === 4 ? (
+                                <p class="warning">Este email já foi cadastrado!</p>
+                            ) : warning === 5 ? (
+                                <p class="warning">Serviço de dados inativo!</p>
+                            ) : warning === 6 ? (
+                                <p class="warning">Houve algum problema nosso!</p>
+                            ) : warning === 7 ? (
+                                <p class="warning">Serviço de dados inativo!</p>
+                            ) : (
+                                <div style={{height: 10}}></div>
+                            )}
+                            
+                            <button class="btn btn-second" onClick={upUser}>Criar</button>        
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div class="content second-content">
-                <div class="first-column">
-                    <h2 class="title title-primary">Olá, amigo!</h2>
-                    <p class="description description-primary">Insira suas informações pessoais.</p>
-                    <p class="description description-primary">e comece sua jornada conosco.</p>
-                    <button id="signup" class="btn btn-primary">Criar</button>
-                </div>
-                <div class="second-column">
-                    <h2 class="title title-second">Entrar</h2>
-                    <p class="description description-second">ou use sua conta de email</p>
-                    <form class="form">
-                    
-                        <label class="label-input" for="">
-                            <i class="far fa-envelope icon-modify"></i>
-                            <input type="email" placeholder="Email" onChange={handleChangeEmail}/>
-                        </label>
-                    
-                        <label class="label-input" for="">
-                            <i class="fas fa-lock icon-modify"></i>
-                            <input type="password" placeholder="Senha" onChange={handleChangePassword}/>
-                        </label>
-                        {warning === 1 ? (
-                            <p class="warning">Senha ou Email incorretos!</p>
-                        ) : warning === 2 ? (
-                            <p class="warning">Conta não Registrada!</p>
-                        ) : warning === 6 ? (
-                            <p class="warning">Houve algum problema nosso!</p>
-                        ) : warning === 5 ? (
-                            <p class="warning">Serviço de dados inativo!</p>
-                        ) : warning === 7 ? (
-                            <p class="warning">Serviço de dados inativo!</p>
-                        ) : (
-                            <div style={{height: 10}}></div>
-                        )}
+                <div class="content second-content">
+                    <div class="first-column">
+                        <h2 class="title title-primary">Olá, amigo!</h2>
+                        <p class="description description-primary">Insira suas informações pessoais.</p>
+                        <p class="description description-primary">e comece sua jornada conosco.</p>
+                        <button id="signup" class="btn btn-primary">Criar</button>
+                    </div>
+                    <div class="second-column">
+                        <h2 class="title title-second">Entrar</h2>
+                        <p class="description description-second">ou use sua conta de email</p>
+                        <form class="form">
+                        
+                            <label class="label-input" for="">
+                                <i class="far fa-envelope icon-modify"></i>
+                                <input type="email" placeholder="Email" onChange={handleChangeEmail}/>
+                            </label>
+                        
+                            <label class="label-input" for="">
+                                <i class="fas fa-lock icon-modify"></i>
+                                <input type="password" placeholder="Senha" onChange={handleChangePassword}/>
+                            </label>
+                            {warning === 1 ? (
+                                <p class="warning">Senha ou Email incorretos!</p>
+                            ) : warning === 2 ? (
+                                <p class="warning">Conta não Registrada!</p>
+                            ) : warning === 6 ? (
+                                <p class="warning">Houve algum problema nosso!</p>
+                            ) : warning === 5 ? (
+                                <p class="warning">Serviço de dados inativo!</p>
+                            ) : warning === 7 ? (
+                                <p class="warning">Serviço de dados inativo!</p>
+                            ) : (
+                                <div style={{height: 10}}></div>
+                            )}
 
-                        <a class="password" href="/">Esqueci minha senha?</a>
-                        <button class="btn btn-second" onClick={loginUser}>Entrar</button>
-                    </form>
+                            <a class="password" href="/">Esqueci minha senha?</a>
+                            <button class="btn btn-second" onClick={loginUser}>Entrar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

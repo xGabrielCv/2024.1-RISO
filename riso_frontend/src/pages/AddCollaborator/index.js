@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import { linkUser } from "../../services/unityServices";
+import { createUserToUnity } from "../../services/userToUnityServices";
 
 function addCollaborator() {
 
@@ -21,40 +21,12 @@ function addCollaborator() {
     async function addCollab(event){
         event.preventDefault(); 
         try {
-            const response = await linkUser(unityId, email);
+            const response = await createUserToUnity(unityId, email);
             console.log(response);
         } catch (err) {
             console.log(err);
         }
     }
-
-    // useEffect(() => {
-    //     const btnSignin = document.querySelector("#signin");
-    //     const btnSignup = document.querySelector("#signup");
-    //     const body = document.querySelector("body");
-
-    //     if (btnSignin && btnSignup) {
-    //         btnSignin.addEventListener("click", function () {
-    //             body.className = "sign-in-js";
-    //         });
-
-    //         btnSignup.addEventListener("click", function () {
-    //             body.className = "sign-up-js";
-    //         });
-    //     }
-
-    //     return () => {
-    //         if (btnSignin && btnSignup) {
-    //             btnSignin.removeEventListener("click", function () {
-    //                 body.className = "sign-in-js";
-    //             });
-
-    //             btnSignup.removeEventListener("click", function () {
-    //                 body.className = "sign-up-js";
-    //             });
-    //         }
-    //     };
-    // }, []);
 
     return (
         <div class="container">

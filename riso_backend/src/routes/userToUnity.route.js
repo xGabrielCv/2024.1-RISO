@@ -3,7 +3,7 @@ const userToUnityRouter = express.Router();
 
 import userToUnityController from '../controllers/userToUnity.controller.js';
 
-userToUnityRouter.post('/createUser', userToUnityController.createUserToUnity);
-userToUnityRouter.get('/findUser', userToUnityController.findUserAndUnity);
+userToUnityRouter.post('/createUserToUnity', userToUnityController.createUserToUnity);
+userToUnityRouter.get('/findUserAndUnity', userToUnityController.findUserAndUnity);
 
 export default userToUnityRouter;

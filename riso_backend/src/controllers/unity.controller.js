@@ -26,7 +26,7 @@ const createUnity = async (req, res) => {
     }
 
     const unity = await unityService.createService({
-      'unityId': bcrypt.hashSync(req.body.unityId, salt),
+      'unityId': req.body.unityId,
     });
 
     if(!unity){
@@ -52,9 +52,9 @@ const findOne = async (req, res) => {
       return res.status(404).send({ local: 'on req', message: 'Unity not found'});
     }
 
-    if (unity.unityId != bcrypt.hashSync(unityId, salt)) {
-      return res.status(400).send({ local: 'on req', message: 'Unity code is invalid'})
-    }
+    // if (!unity.unityId) {
+    //   return res.status(400).send({ local: 'on req', message: 'Unity code is invalid'})
+    // }
     
     return res.status(200).send(user);
   }catch(err) {

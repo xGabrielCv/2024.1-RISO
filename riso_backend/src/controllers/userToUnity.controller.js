@@ -26,7 +26,7 @@ const createUserToUnity = async (req, res) => {
     }
 
     const userToUnity = await userToUnityService.createService({
-      'unityId': bcrypt.hashSync(req.body.unityId, salt),
+      'unityId': req.body.unityId,
       'email': req.body.email,
     });
 
@@ -48,12 +48,12 @@ const findUserAndUnity = async (req, res) => {
       return res.status(400).send({ message: 'Submit all fields for login' })
     }
     
-    const userAndUnity = await userToUnityService.findUserAndUnity({ unityId, email });
+//    const userAndUnity = await userToUnityService.findUserAndUnity({ unityId, email });
     if (!userAndUnity) {
       return res.status(404).send({ local: 'on req', message: 'User or Unity not found'});
     }
 
-    if (userAndUnity.unityId != bcrypt.hashSync(unityId, salt)) {
+    if (!userAndUnity.unityId) {
       return res.status(400).send({ local: 'on req', message: 'Unity code is invalid'})
     }
     

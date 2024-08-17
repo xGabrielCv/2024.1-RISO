@@ -2,10 +2,9 @@ import axios from 'axios';
 
 const baseURL = 'http://localhost:3000';
 
-export function linkUser(unityIdData, emailData) {
+export function createUnity(unityIdData) {
     const body = {
-        id: unityIdData,
-        email: emailData,
+        unityId: unityIdData,
     };
 
    const response = axios.post(`${baseURL}/unity/linkUser`, body);

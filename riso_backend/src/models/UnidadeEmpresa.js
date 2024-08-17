@@ -26,7 +26,15 @@ const UnidadeEmpresaSchema = new mongoose.Schema({
     type: String,
     required: true
     },
-  numero: Number,
+  numero: {
+    type: Number,
+    require: false
+  },
+  code: {
+    type: String,
+    require: false,
+    unique: true,
+  }
 });
 
 const UnidadeEmpresa = mongoose.model('UnidadeEmpresa', UnidadeEmpresaSchema);

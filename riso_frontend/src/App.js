@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 // IMPORTAÇÕES DE PÁGINAS:
 import Autentication from './pages/Autentication';
 import HomePage from './pages/HomePage';
-import AddCollaborator from './pages/Autentication'
+import RegisterUnit from './pages/CadastroEmpresa';
+import AddCollaborator from './pages/AddCollaborator';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path='/' element={<Autentication />} />
         <Route path='/homePage' element={<HomePage />} />
         <Route path='/addCollabrator' element={<AddCollaborator/>}/>
+        <Route path='/registerUnit' element={<RegisterUnit/>}/>
       </Routes>
     </Router>
   );

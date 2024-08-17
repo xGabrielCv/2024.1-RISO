@@ -27,6 +27,9 @@ function Autentication() {
     const handleChangePassword = (event) => {
         setPassword(event.target.value);
     }
+    const handleSignupClick = () => {
+        navigate('/CadastroEmpresa');
+      };
 
     async function upUser(event){
         event.preventDefault(); 
@@ -115,7 +118,7 @@ function Autentication() {
                     <h2 class="title title-primary">Olá, amigo!</h2>
                     <p class="description description-primary">Insira suas informações pessoais.</p>
                     <p class="description description-primary">e comece sua jornada conosco.</p>
-                    <button id="signup" class="btn btn-primary">Criar</button>
+                    <button onClick={handleSignupClick} id="signup" class="btn btn-primary">Criar</button>
                 </div>
                 <div class="second-column">
                     <h2 class="title title-second">Entrar</h2>

@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# RISO - Frontend - Serviço
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este documento fornece um guia passo a passo para configurar e executar o ambiente de desenvolvimento do frontend do projeto RISO, que utiliza React.js.
 
-## Available Scripts
+## Requisitos
 
-In the project directory, you can run:
+Antes de começar, certifique-se de ter os seguintes softwares instalados:
 
-### `npm start`
+- **Node.js (versão 20.x.x)**
+- **NPM (versão compatível com Node.js 20)**
+- **Git** (para controle de versão)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Instalação
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone o repositório:**
 
-### `npm test`
+```bash
+git clone https://github.com/usuario/riso-frontend.git
+cd riso-frontend
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Instale as dependências:**
 
-### `npm run build`
+Use o NPM para instalar todas as dependências do projeto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Configuração do Ambiente
+### Variáveis do Sistema:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Crie um arquivo **.env** na raiz do projeto para configurar variáveis de ambiente. Por exemplo:
 
-### `npm run eject`
+```env
+REACT_APP_API_URL=http://localhost:3000
+REACT_APP_ENV=development
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Executando o Servidor de Desenvolvimento
+Para iniciar o servidor de desenvolvimento, use o seguinte comando:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Isso iniciará o servidor na porta 3000 por padrão. Acesse o aplicativo em http://localhost:3000.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+O servidor será recarregado automaticamente a cada mudança no código.
 
-## Learn More
+## Compilando para Produção
+Para compilar o projeto para produção, use:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Isso criará uma pasta build com todos os arquivos otimizados para produção.
 
-### Code Splitting
+## Estrutura de Pastas
+Aqui está a estrutura básica das pastas do frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```plaintext
+riso-frontend/
+│
+├── public/             # Arquivos públicos (index.html, favicon, etc.)
+├── src/
+│   ├── assets/         # Imagens, ícones, etc.
+│   ├── components/     # Componentes reutilizáveis do React
+│   ├── pages/          # Páginas do aplicativo
+│   ├── services/       # Serviços de integração com API
+│   └── App.js          # Componente principal do aplicativo
+│
+├── .gitignore          # Arquivos ignorados pelo Git
+├── package.json        # Dependências e scripts do projeto
+└── README.md           # Este manual
+```
 
-### Analyzing the Bundle Size
+## Testes
+Para executar os testes do frontend, utilize:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm test
+```
 
-### Making a Progressive Web App
+Os testes serão executados usando a ferramenta padrão do React (Jest).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contribuindo
+Contribuições são bem-vindas! Consulte o [CONTRIBUTING.md](../CONTRIBUTING.md) para mais detalhes.
 
-### Advanced Configuration
+## Licença
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais informações.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

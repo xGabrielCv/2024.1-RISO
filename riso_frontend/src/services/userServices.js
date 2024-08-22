@@ -19,7 +19,7 @@ export function loginUser (email, password){
     email: email,
     password: password,
   }
-
+  
   const response = axios.post(`${baseURL}/user/loginUser`, body);
   return response;
 };

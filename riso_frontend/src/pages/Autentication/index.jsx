@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
-import { createUser, findOne } from "../../services/userServices";
+import { createUser, loginUser } from "../../services/userServices";
 
 function Autentication() {
 
@@ -33,7 +33,8 @@ function Autentication() {
         event.preventDefault(); 
         try {
             const response = await createUser(name, email, password);
-            console.log(response);
+            setWarning(false);
+            navigate('/homePage');
         } catch (err) {
             // Verifica se err.response está definido
             if (err.response) {
@@ -44,6 +45,11 @@ function Autentication() {
                     }, 2000);
                 } else if (err.response.status === 400 && err.response.data.substatus === 2) {
                     setWarning(4);
+                    setTimeout(() => {
+                        setWarning(0);
+                    }, 2000);
+                } else if (err.response.status === 400 && err.response.data.substatus === 3) {
+                    setWarning(8);
                     setTimeout(() => {
                         setWarning(0);
                     }, 2000);
@@ -70,10 +76,10 @@ function Autentication() {
         }
     }
 
-    async function loginUser(event) {
+    async function login(event) {
         event.preventDefault();
         try {
-            await findOne(email, password);
+            await loginUser(email, password);
             setWarning(false);
             navigate('/homePage');
         } catch (err) {
@@ -178,6 +184,8 @@ function Autentication() {
                                 <p class="warning">Houve algum problema nosso!</p>
                             ) : warning === 7 ? (
                                 <p class="warning">Serviço de dados inativo!</p>
+                            ) :  warning === 8? (
+                                <p class="warning">Email no formato Incorreto!</p>
                             ) : (
                                 <div style={{height: 10}}></div>
                             )}
@@ -222,7 +230,7 @@ function Autentication() {
                             )}
 
                             <a class="password" href="/">Esqueci minha senha?</a>
-                            <button class="btn btn-second" onClick={loginUser}>Entrar</button>
+                            <button class="btn btn-second" onClick={login}>Entrar</button>
                         </form>
                     </div>
                 </div>

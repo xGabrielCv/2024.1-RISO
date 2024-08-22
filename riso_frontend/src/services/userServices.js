@@ -14,7 +14,12 @@ export function createUser(nameData, emailData, passwordData) {
   return response;
 };
 
-export function findOne(email, password){
-  const response = axios.get(`${baseURL}/user/findUser`, { params: { email, password }});
+export function loginUser (email, password){
+  const body = {
+    email: email,
+    password: password,
+  }
+
+  const response = axios.post(`${baseURL}/user/loginUser`, body);
   return response;
 };

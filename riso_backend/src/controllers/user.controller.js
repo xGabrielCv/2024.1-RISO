@@ -17,51 +17,120 @@ var salt = '$2b$10$oGNYbTMTWMhrxSxxiKWu8.';
 
 // ================================
 
+const findAllUser = async (req, res) => {
+  try{
+    const user = await userService.findAllService();
+
+    if (user.length === 0) {
+      return res.status(200).send({message: 'Any user was created'});
+    }
+
+    return res.status(201).send({ user: user });
+  }catch(err) {
+    return res.status(500).send({ message: err.message });  
+  }
+};
+
 const createUser = async (req, res) => {
   try {
     const {name, email, password} = req.body;
     
     if(!name || !email || !password){
-      return res.status(400).send({ message: 'Submit all fields for registration' })
+      return res.status(400).send({ message: 'Submit all fields for registration', substatus: 1 })
     }
 
+     // Verificação do formato do email
+     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+     if (!emailRegex.test(email)) {
+       return res.status(400).send({ message: 'Invalid email format', substatus: 3 });
+     }
+
     const user = await userService.createService({
-      'name': req.body.name,
-      'email': req.body.email,
+      name,
+      email,
       'password': bcrypt.hashSync(req.body.password, salt),
     });
 
     if(!user){
-      return res.status(400).send({local: 'On req', message: 'Error creating User' });
+      return res.status(403).send({ message: 'Error creating User' });
     }
     
-    return res.status(200).send({message: 'User created sucefully', user: user });
+    return res.status(201).send({message: 'User created sucefully', user: user });
   }catch(err){
+    if (err.code === 11000) {  // Código de erro para violação de chave única em MongoDB/Mongoose
+      return res.status(400).send({ message: 'Email already in use', substatus: 2 });
+    }
     return res.status(500).send({ message: err.message });  
   }
 };
 
-const findOne = async (req, res) => {
+const loginUser = async (req, res) => {
   try {
-    const {email, password} = req.query;
+    const {email, password} = req.body;
 
     if(!email || !password){
-      return res.status(400).send({ message: 'Submit all fields for login' })
+      return res.status(400).send({ message: 'Submit all fields for login', substatus: 1})
     }
     
-    const user = await userService.findOne({ email });
+    const user = await userService.findOneService({ email });
     if (!user) {
-      return res.status(404).send({ local: 'on req', message: 'User not found'});
+      return res.status(404).send({ message: 'User not found', substatus: 1});
     }
 
     if (user.password != bcrypt.hashSync(password, salt)) {
-      return res.status(400).send({ local: 'on req', message: 'Password or email is invalid'})
+      return res.status(400).send({ message: 'Password or email is invalid', substatus: 2});
     }
     
-    return res.status(200).send(user);
+    return res.status(200).send({message: 'User was found it', user:user});
   }catch(err) {
-    return res.status(500).send({ local: 'On req', message: err.message });
+    return res.status(500).send({ message: err.message });
   }
 }
 
-export default {createUser, findOne};
+const updateUser = async (req, res) => {
+  try{
+    const {id} = req.params;
+
+    if(!id) {
+      return res.status(404).send({message: 'User ID is required'});
+    }
+
+    const user = await userService.updateService({_id: id}, req.body);
+
+    if (!user) {
+      return res.status(404).send({ message: 'This user does not exist' });
+    }
+
+    return res.status(200).send({message: 'This user was updated', user:user});
+  }catch(err) {
+    return res.status(500).send({ message: err.message });
+  }
+}
+
+const deleteUser = async (req, res) => {
+  try{
+    const {id} = req.params;
+
+    if (!id) {
+      return res.status(404).send({message: 'User ID is required'});
+    }
+
+    const user = await userService.deleteService({ _id: id});
+
+    if (!user) {
+      return res.status(404).send({ message: 'This user does not exist' });
+    }
+
+    return res.status(200).send({ message: 'This user was deleted successfully', user });
+  }catch(err){
+    return res.status(500).send({ message: err.message });
+  }
+}
+
+export default {
+  findAllUser, 
+  createUser, 
+  loginUser,
+  updateUser,
+  deleteUser,
+};

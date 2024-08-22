@@ -1,20 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-.container {
+.AutenticationPage .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #ecf0f1;
 }
-.content {
+.AutenticationPage .content {
     background-color: #fff;
     border-radius: 15px;
     width: 960px;
@@ -23,7 +14,7 @@ body {
     align-items: center;
     position: relative;
 }
-.content::before {
+.AutenticationPage .content::before {
     content: "";
     position: absolute;
     background-color: #58af9b;
@@ -35,30 +26,30 @@ body {
 
     left: 0;
 }
-.title {
+.AutenticationPage .title {
     font-size: 28px;
 
     font-weight: bold;
     text-transform: capitalize;
 }
-.title-primary {
+.AutenticationPage .title-primary {
     color: #fff;
 }
-.title-second {
+.AutenticationPage .title-second {
     color: #58af9b;
 }
-.description {
+.AutenticationPage .description {
     font-size: 14px;
     font-weight: 300;
     line-height: 30px;
 }
-.description-primary {
+.AutenticationPage .description-primary {
     color: #fff;
 }
-.description-second {
+.AutenticationPage .description-second {
     color: #7f8c8d;
 }
-.btn {
+.AutenticationPage .btn {
     border-radius: 15px;
     text-transform: uppercase;
     color: #fff;
@@ -71,61 +62,61 @@ body {
     border: none;
     margin-top: 1rem;
 }
-.btn-primary {
+.AutenticationPage .btn-primary {
     background-color: transparent;
     border: 1px solid #fff;
     transition: background-color .5s;
 }
-.btn-primary:hover {
+.AutenticationPage .btn-primary:hover {
     background-color: #fff;
     color: #58af9b;
 }
-.btn-second {
+.AutenticationPage .btn-second {
     background-color: #58af9b;
     border: 1px solid #58af9b;
     transition: background-color .5s;
 }
-.btn-second:hover {
+.AutenticationPage .btn-second:hover {
     background-color: #fff;
     border: 1px solid #58af9b;
     color: #58af9b;
 }
-.first-content {
+.AutenticationPage .first-content {
     display: flex;
 }
-.first-content .second-column {
+.AutenticationPage .first-content .second-column {
     z-index: 11;
 }
-.first-column {
+.AutenticationPage .first-column {
     text-align: center;
     width: 40%;
     z-index: 10;
 }
-.second-column {
+.AutenticationPage .second-column {
     width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.social-media {
+.AutenticationPage .social-media {
     margin: 1rem 0;
 }
-.link-social-media:not(:first-child){
+.AutenticationPage .link-social-media:not(:first-child){
     margin-left: 10px;
 }
-.link-social-media .item-social-media {
+.AutenticationPage .link-social-media .item-social-media {
     transition: background-color .5s;
 }
-.link-social-media:hover .item-social-media{
+.AutenticationPage .link-social-media:hover .item-social-media{
     background-color: #58af9b;
     color: #fff;
     border-color: #58af9b;
 }
-.list-social-media {
+.AutenticationPage .list-social-media {
     display: flex;
     list-style-type: none;
 }
-.item-social-media {
+.AutenticationPage .item-social-media {
     border: 1px solid #bdc3c7;
     border-radius: 50%;
     width: 35px;
@@ -134,54 +125,54 @@ body {
     text-align: center;
     color: #95a5a6;
 }
-.form {
+.AutenticationPage .form {
     display: flex;
     flex-direction: column;
     width: 55%;
 }
-.form input {
+.AutenticationPage .form input {
     height: 45px;
     width: 100%;
     border: none;
     background-color: #ecf0f1;
 }
-input:-webkit-autofill 
+.AutenticationPage input:-webkit-autofill 
 {    
     -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
     -webkit-text-fill-color: #000 !important;
 }
-.label-input {
+.AutenticationPage .label-input {
     background-color: #ecf0f1;
     display: flex;
     align-items: center;
     margin: 8px;
 }
-.icon-modify {
+.AutenticationPage .icon-modify {
     color: #7f8c8d;
     padding: 0 5px;
 }
 
 /* second content*/
 
-.second-content {
+.AutenticationPage .second-content {
     position: absolute;
     display: flex;
 }
-.second-content .first-column {
+.AutenticationPage .second-content .first-column {
     order: 2;
     z-index: -1;
 }
-.second-content .second-column {
+.AutenticationPage .second-content .second-column {
     order: 1;
     z-index: -1;
 }
-.password {
+.AutenticationPage .password {
     color: #34495e;
     font-size: 14px;
     margin: 15px 0;
     text-align: center;
 }
-.password::first-letter {
+.AutenticationPage .password::first-letter {
     text-transform: capitalize;
 }
 
@@ -241,6 +232,13 @@ input:-webkit-autofill
     position: relative;
     z-index: -1;
     animation: deslocamentoDir 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+}
+
+.AutenticationPage .warning {
+    height: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: red;
 }
 
 /*ANIMAÇÃOO CSS PARA O CONTEÚDO*/
@@ -358,34 +356,34 @@ input:-webkit-autofill
 
 /*VERSÃO MOBILE*/
 @media screen and (max-width: 1040px) {
-    .content {
+    .AutenticationPage .content {
         width: 100%;
         height: 100%;
     }
 
-    .content::before {
+    .AutenticationPage .content::before {
         width: 100%;
         height: 40%;
         top: 0;
         border-radius: 0;
     }
-    .first-content, .second-content {
+    .AutenticationPage .first-content,.AutenticationPage .second-content {
         flex-direction: column;
         justify-content: space-around;
     }
 
-    .first-column, .second-column {
+    .AutenticationPage .first-column,.AutenticationPage .second-column {
         width: 100%;
     }
     
-    .sign-in-js .content::before {
+    .AutenticationPage .sign-in-js .content::before {
         top: 60%;
         left: 0;
         border-radius: 0;
 
     }
 
-    .form {
+    .AutenticationPage .form {
         width: 90%;
     }
     
@@ -504,13 +502,13 @@ input:-webkit-autofill
 }
 
 @media screen and (max-width: 740px) {
-    .form {
+    .AutenticationPage .form {
         width: 50%;
     }
 }
 
 @media screen and (max-width: 425px) {
-    .form {
+    .AutenticationPage .form {
         width: 100%;
     }
 }

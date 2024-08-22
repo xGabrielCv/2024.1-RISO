@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 const allowedOrigins = [
-  'http://localhost:3001'
+  process.env.SOFTWARE_URL
 ];
 
 const corsOptionsDelegate = function (req, callback) {

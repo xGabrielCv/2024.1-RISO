@@ -4,15 +4,15 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Autentication from './pages/Autentication';
 import HomePage from './pages/HomePage';
 import RegisterUnit from './pages/CadastroEmpresa';
-import AddCollaborator from './pages/AddCollaborator';
+import addUnityModal from './components/addUnityModal/index';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Autentication />} />
+        <Route path='/' element={<addUnityModal />} />
+        {/*<Route path='/' element={<Autentication />} />*/}
         <Route path='/homePage' element={<HomePage />} />
-        <Route path='/addCollabrator' element={<AddCollaborator/>}/>
         <Route path='/registerUnit' element={<RegisterUnit/>}/>
       </Routes>
     </Router>

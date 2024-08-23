@@ -2,17 +2,8 @@ import axios from 'axios';
 
 const baseURL = 'http://localhost:3000';
 
-export function createUnity(unityIdData) {
-    const body = {
-        unityId: unityIdData,
-    };
+export function findOne (code) {
+    const response = axios.get(`${baseURL}/unidadeEmpresa/findOneUnity`, { params: { code }});
 
-   const response = axios.post(`${baseURL}/unity/linkUser`, body);
-
-   return response;
-};
-
-export function findOne(unityId){
-  const response = axios.get(`${baseURL}/unity/findUnity`, { params: { unityId }});
-  return response;
-};
+    return response;
+}

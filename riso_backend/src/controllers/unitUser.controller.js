@@ -77,6 +77,26 @@ const findAllUsersByUnitIdUserUnit = async (req, res) => {
   }
 };
 
+const updateUnitUser = async (req, res) => {
+  try{
+    const { id } = req.params;
+
+    if(!id) {
+      return res.status(404).send({ message: 'User ID is required' });
+    }
+
+    const unitUser = await unitUserService.updateService({_id: id}, req.body);
+
+    if (!unitUser) {
+      return res.status(404).send({ message: 'This unit and user relationship does not exist' });
+    }
+
+    return res.status(200).send({ message: 'This unit and user relationship were updated', unitUser });
+  }catch(err) {
+    return res.status(500).send({ message: err.message });
+  }
+}
+
 const deleteUnitUser = async (req,res) => {
     try{
         const {id} = req.params;
@@ -102,5 +122,6 @@ export default {
   createUnitUser,
   findByUserIdUnitUser,
   findAllUsersByUnitIdUserUnit,
+  updateUnitUser,
   deleteUnitUser,
 };

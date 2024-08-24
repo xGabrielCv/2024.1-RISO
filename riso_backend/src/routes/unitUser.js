@@ -7,6 +7,7 @@ unitUserRouter.get('/findAllUnitUser', unitUserController.findAllUnitUser);
 unitUserRouter.post('/createUnitUser',unitUserController.createUnitUser);
 unitUserRouter.get('/findByUserId/:UserId', unitUserController.findByUserIdUnitUser);
 unitUserRouter.get('/findAllUsersByUnitId/:UnitId', unitUserController.findAllUsersByUnitIdUserUnit);
+unitUserRouter.patch('/updateUnitUser/:id', )
 unitUserRouter.delete('/deleteUnitUser/:id',unitUserController.deleteUnitUser);
 
 export default unitUserRouter;

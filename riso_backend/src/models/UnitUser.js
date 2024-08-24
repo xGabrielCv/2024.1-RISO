@@ -10,7 +10,11 @@ const UnitUserSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Unit',
         required: true
-    }
+    },
+    master_adm: {
+        type: Boolean,
+        required: true,
+    },
 }, {timestamps: true});
 
 // Garantir que um usuário não possa estar na mesma unidade mais de uma vez

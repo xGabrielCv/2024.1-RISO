@@ -29,6 +29,11 @@ const UnitSchema = new mongoose.Schema({
   number: {
     type: Number,
     required: false
+  },
+  code: {
+    type: String,
+    required: true,
+    unique: true,
   }
 }, {timestamps:true});
 

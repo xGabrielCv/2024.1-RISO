@@ -14,6 +14,19 @@ const findAllUnit = async (req, res) => {
     }
 }
 
+const findByCodeUnit = async (req, res) => {
+    try {
+        const { code } = req.params;
+        const unit = await unitService.findByCode(code);
+        if (!unit) {
+            return res.status(404).send({ message: 'Unit not found' });
+        }
+        return res.status(200).send(unit);
+    } catch (err) {
+        return res.status(500).send({ message: err.message });
+    }
+};
+
 const createUnit = async (req, res) => {
     try{
         const {
@@ -22,14 +35,46 @@ const createUnit = async (req, res) => {
             cnpj,
             state,
             street,
-            complement
+            complement,
         } = req.body;
 
         if (!name || !numberOfficials || !cnpj || !state || !street || !complement) {
             return res.status(400).send({ message: 'Submit all fields for unit', substatus: 1});
         };
 
-        const unit = await unitService.createService(req.body);
+        // Função para gerar um código aleatório de 5 dígitos alfanuméricos
+        const generateCode = () => {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < 5; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        };
+
+        // Função para gerar um código único, garantindo que ele não se repita
+        const generateUniqueCode = async () => {
+            let unique = false;
+            let newCode;
+            while (!unique) {
+                newCode = generateCode();
+                const existingUnit = await unitService.findByCode(newCode);
+                if (!existingUnit) {
+                    unique = true;
+                }
+            }
+            return newCode;
+        };
+
+        // Se o código não for passado no body, geramos um automaticamente
+        const generatedCode = await generateUniqueCode();
+
+        const unitData = {
+            ...req.body,
+            code: generatedCode
+        };
+
+        const unit = await unitService.createService(unitData);
 
         return res.status(200).send({message: 'Unity and company successfully created ', unit:unit});
     }catch (err){
@@ -83,6 +128,7 @@ const deleteUnit = async (req,res) => {
 
 export default {
     findAllUnit,
+    findByCodeUnit,
     createUnit,
     updateUnit,
     deleteUnit,

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createUnit } from "../../services/unitServices";
 import './estilo.css';
 
 function RegisterUnit() {
     
     const navigate = useNavigate();
 
-  
     const [unitName, setUnitName] = useState('');
     const [employeeNumber, setEmployeeNumber] = useState('');
     const [cnpj, setCnpj] = useState('');
@@ -25,27 +25,13 @@ function RegisterUnit() {
     const handleChangeNumber = (event) => setNumber(event.target.value);
 
 
-    async function submitForm(event) {
+    async function newUnit(event) {
         event.preventDefault(); 
         try {
-            const unitData = {
-                unitName,
-                employeeNumber,
-                cnpj,
-                state,
-                street,
-                complement,
-                number,
-            };
-            console.log("Dados da Unidade:", unitData);
-            // Aqui você poderia fazer a chamada para a API para salvar os dados
-            // Exemplo: const response = await saveUnit(unitData);
-            // console.log(response);
-
-            // Redirecionar para outra página após salvar (opcional)
-            navigate('/successPage'); 
+            const response = await createUnit(unitName, employeeNumber, cnpj, state, street, complement, number);
+            navigate('/HomePage'); 
         } catch (err) {
-            console.log(err);
+            console.log(err.response);
         }
     }
 
@@ -55,30 +41,28 @@ function RegisterUnit() {
             <div>
                 <div className="second-column">
                     <h2 className="title title-second">Registrar Nova Unidade/Empresa</h2>
-                    <form className="form" onSubmit={submitForm}>
-                        <label className="label-input">
-                            <input type="text" placeholder="Nome Unidade/Empresa" value={unitName} onChange={handleChangeUnitName} required/>
-                        </label>
-                        <label className="label-input">
-                            <input type="number" placeholder="Númerode Funcionários" value={employeeNumber} onChange={handleChangeEmployeeNumber} required/>
-                        </label>
-                        <label className="label-input">
-                            <input type="text" placeholder="CNPJ" value={cnpj} onChange={handleChangeCnpj} required/>
-                        </label>
-                        <label className="label-input">
-                            <input type="text" placeholder="Estado" value={state} onChange={handleChangeState} required/>
-                        </label>
-                        <label className="label-input">
-                            <input type="text" placeholder="Rua" value={street} onChange={handleChangeStreet} required/>
-                        </label>
-                        <label className="label-input">
-                            <input type="text" placeholder="Complemento" value={complement} onChange={handleChangeComplement} required/>
-                        </label>
-                        <label className="label-input">
-                            <input type="text" placeholder="Número" value={number} onChange={handleChangeNumber} required/>
-                        </label>
-                        <button className="btn btn-second" type="submit">Registrar</button>
-                    </form>
+                    <label className="label-input">
+                        <input type="text" placeholder="Nome Unidade/Empresa" value={unitName} onChange={handleChangeUnitName} required/>
+                    </label>
+                    <label className="label-input">
+                        <input type="number" placeholder="Númerode Funcionários" value={employeeNumber} onChange={handleChangeEmployeeNumber} required/>
+                    </label>
+                    <label className="label-input">
+                        <input type="text" placeholder="CNPJ" value={cnpj} onChange={handleChangeCnpj} required/>
+                    </label>
+                    <label className="label-input">
+                        <input type="text" placeholder="Estado" value={state} onChange={handleChangeState} required/>
+                    </label>
+                    <label className="label-input">
+                        <input type="text" placeholder="Rua" value={street} onChange={handleChangeStreet} required/>
+                    </label>
+                    <label className="label-input">
+                        <input type="text" placeholder="Complemento" value={complement} onChange={handleChangeComplement} required/>
+                    </label>
+                    <label className="label-input">
+                        <input type="text" placeholder="Número" value={number} onChange={handleChangeNumber} required/>
+                    </label>
+                    <button className="btn btn-second" onClick={newUnit}>Registrar</button>
                 </div>
             </div>
         </div>

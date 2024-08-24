@@ -229,7 +229,7 @@ function Autentication() {
                                 <div style={{height: 10}}></div>
                             )}
 
-                            <a class="password" href="/CadastroEmpresa">Esqueci minha senha?</a>
+                            <a class="password" href="/RegisterUnit">Esqueci minha senha?</a>
                             <button class="btn btn-second" onClick={login}>Entrar</button>
                         </form>
                     </div>

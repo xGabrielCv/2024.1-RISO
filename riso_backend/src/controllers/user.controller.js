@@ -25,7 +25,7 @@ const findAllUser = async (req, res) => {
       return res.status(200).send({message: 'Any user was created'});
     }
 
-    return res.status(201).send({ user: user });
+    return res.status(201).send({ message: 'Users were found', user });
   }catch(err) {
     return res.status(500).send({ message: err.message });  
   }
@@ -55,7 +55,7 @@ const createUser = async (req, res) => {
       return res.status(403).send({ message: 'Error creating User' });
     }
     
-    return res.status(201).send({message: 'User created sucefully', user: user });
+    return res.status(201).send({message: 'User created sucefully', user });
   }catch(err){
     if (err.code === 11000) {  // Código de erro para violação de chave única em MongoDB/Mongoose
       return res.status(400).send({ message: 'Email already in use', substatus: 2 });
@@ -81,7 +81,7 @@ const loginUser = async (req, res) => {
       return res.status(400).send({ message: 'Password or email is invalid', substatus: 2});
     }
     
-    return res.status(200).send({message: 'User was found it', user:user});
+    return res.status(200).send({ message: 'User was found it', user });
   }catch(err) {
     return res.status(500).send({ message: err.message });
   }
@@ -92,7 +92,7 @@ const updateUser = async (req, res) => {
     const {id} = req.params;
 
     if(!id) {
-      return res.status(404).send({message: 'User ID is required'});
+      return res.status(404).send({ message: 'User ID is required' });
     }
 
     const user = await userService.updateService({_id: id}, req.body);
@@ -101,7 +101,7 @@ const updateUser = async (req, res) => {
       return res.status(404).send({ message: 'This user does not exist' });
     }
 
-    return res.status(200).send({message: 'This user was updated', user:user});
+    return res.status(200).send({ message: 'This user was updated', user });
   }catch(err) {
     return res.status(500).send({ message: err.message });
   }

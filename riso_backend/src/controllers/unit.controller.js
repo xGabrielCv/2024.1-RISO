@@ -8,7 +8,7 @@ const findAllUnit = async (req, res) => {
         return res.status(200).send({message: 'Any user was created'});
       }
   
-      return res.status(201).send({ unit: unit });
+      return res.status(201).send({ message: 'Units were found', unit });
     }catch(err) {
       return res.status(500).send({ message: err.message });  
     }
@@ -21,7 +21,7 @@ const findByCodeUnit = async (req, res) => {
         if (!unit) {
             return res.status(404).send({ message: 'Unit not found' });
         }
-        return res.status(200).send(unit);
+        return res.status(200).send({ message: 'Unit was found', unit });
     } catch (err) {
         return res.status(500).send({ message: err.message });
     }
@@ -76,7 +76,7 @@ const createUnit = async (req, res) => {
 
         const unit = await unitService.createService(unitData);
 
-        return res.status(200).send({message: 'Unity and company successfully created ', unit:unit});
+        return res.status(200).send({message: 'Unity and company successfully created ', unit});
     }catch (err){
         if (err.code === 11000) {  // Código de erro para violação de chave única em MongoDB/Mongoose
             return res.status(400).send({ message: 'CNPJ already in use', substatus: 2 });
@@ -100,7 +100,7 @@ const updateUnit = async (req, res) => {
             return res.status(404).send({ message: 'Unit not found' });
         }
 
-        return res.status(200).send({message: 'Unit successfully updated ', unit:unit});
+        return res.status(200).send({message: 'Unit successfully updated ', unit});
     }catch (err){
         return res.status(500).send({message: err.message});
     }

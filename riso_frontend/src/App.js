@@ -4,7 +4,6 @@ import { createGlobalStyle } from 'styled-components';
 // IMPORTAÇÕES DE PÁGINAS:
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
-import Autentication from './pages/Autentication';
 
 export const GlobalStyle = createGlobalStyle`
   * {

@@ -83,4 +83,5 @@ export const LinkTexto = styled.a`
   font-size: 13px;
   color: #58af9b;
   margin: 20px;
+  cursor: pointer;
 `;

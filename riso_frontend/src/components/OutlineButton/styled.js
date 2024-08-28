@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
   padding: 10px 40px 10px 40px;
+  width: auto;
+  height: 40px;
   background: none;
   border-radius: 20px;
   font-family: 'Merriweather Sans', sans-serif;

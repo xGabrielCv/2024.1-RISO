@@ -4,6 +4,7 @@ import { Box, Container, BlueFrame, WhiteFrame, TituloBlue, Texto, TituloWhite, 
 import OutlineButton from "../../components/OutlineButton";
 import TextInput from "../../components/TextInput";
 import FillButton from "../../components/Button";
+import Cookies from 'js-cookie';
 
 import { createUser } from "../../services/userServices";
 
@@ -36,8 +37,9 @@ function RegisterPage() {
   async function upUser(event) {
       event.preventDefault(); 
       try {
-          await createUser(name, email, password);
+          const response = await createUser(name, email, password);
           setWarning(false);
+          Cookies.set("token", response.data.token, { expires: 1 });
           navigate('/homePage');
       } catch (err) {
           // Verifica se err.response está definido
@@ -91,16 +93,16 @@ function RegisterPage() {
           <center>
             <TituloBlue>Seja bem Vindo ao RISO!</TituloBlue>
             <Texto>Para manter-se conectado conosco. Por favor, faça login com suas informações pessoais.</Texto>
-            <OutlineButton text={'Entrar'} onClick={toLoginPage}/>
+            <OutlineButton onClick={toLoginPage}>Entrar</OutlineButton>
           </center>
         </BlueFrame>
         <WhiteFrame>
           <center>
             <TituloWhite>Criar Conta</TituloWhite>
             <TextoBlack>Use o seu email para registrar</TextoBlack>
-            <TextInput placeholder={'Nome'} onChange={handleChangeName}/>
-            <TextInput placeholder={'Email'} onChange={handleChangeEmail}/>
-            <TextInput placeholder={'Senha'} onChange={handleChangePassword} type={'password'}/>
+            <TextInput placeholder="Nome" onChange={handleChangeName}/>
+            <TextInput placeholder="Email" onChange={handleChangeEmail}/>
+            <TextInput placeholder="Senha" onChange={handleChangePassword} type="password"/>
             <br />
             {warning === 3 ? (
                                 <Warning>Preencha todos os campos!</Warning>
@@ -117,7 +119,7 @@ function RegisterPage() {
                             ) : (
                                 <Espaco />
                             )}
-            <FillButton text={'Criar'} onClick={upUser}/>
+            <FillButton onClick={upUser}>Criar</FillButton>
           </center>
         </WhiteFrame>
       </Box>

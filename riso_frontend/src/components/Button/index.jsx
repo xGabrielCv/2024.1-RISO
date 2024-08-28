@@ -1,10 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { FillButton } from "./styled";
 
-function Button(props) {
+function Button({onClick, children}) {
   return (
-    <FillButton onClick={props.onClick}>{props.text}</FillButton>
+    <FillButton onClick={onClick}>{children}</FillButton>
   );
 };
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
+}
 
 export default Button;

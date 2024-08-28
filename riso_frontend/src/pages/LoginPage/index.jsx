@@ -4,6 +4,7 @@ import { Box, Container, BlueFrame, WhiteFrame, TituloBlue, Texto, TituloWhite, 
 import OutlineButton from "../../components/OutlineButton";
 import TextInput from "../../components/TextInput";
 import FillButton from "../../components/Button";
+import Cookies from 'js-cookie';
 
 import { loginUser } from "../../services/userServices";
 
@@ -29,8 +30,9 @@ function LoginPage() {
   async function login(event) {
     event.preventDefault();
     try {
-        await loginUser(email, password);
+        const response = await loginUser(email, password);
         setWarning(false);
+        Cookies.set("token", response.data.token, { expires: 1 });
         navigate('/homePage');
     } catch (err) {
         if (err.response) {
@@ -79,8 +81,8 @@ function LoginPage() {
             <TituloWhite>Entrar</TituloWhite>
             <TextoBlack>Preencha com o email e senha para entrar</TextoBlack>
 
-            <TextInput placeholder={'Email'} onChange={handleChangeEmail}/>
-            <TextInput placeholder={'Senha'} onChange={handleChangePassword}/>
+            <TextInput placeholder="Email" onChange={handleChangeEmail}/>
+            <TextInput placeholder="Senha" onChange={handleChangePassword} type="password"/>
 
             <br />
 
@@ -103,7 +105,7 @@ function LoginPage() {
             <br />
             <br />
 
-            <FillButton text={'Entrar'} onClick={login}/>
+            <FillButton onClick={login}>Entrar</FillButton>
           </center>
         </WhiteFrame>
         <BlueFrame>
@@ -113,7 +115,7 @@ function LoginPage() {
             </TituloBlue>
 
             <Texto>Insira suas informações pessoais e comece sua jornada conosco.</Texto>
-            <OutlineButton text={'Criar'} onClick={toRegisterPage}/>
+            <OutlineButton onClick={toRegisterPage}>Criar</OutlineButton>
           </center>
         </BlueFrame>
       </Box>

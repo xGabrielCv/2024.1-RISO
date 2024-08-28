@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const baseURL = 'http://localhost:3000';
 
@@ -14,7 +15,12 @@ export function createUnit(nameData, numberOfficialsData, cnpjData, stateData, s
 
   if (numberData) body.number = numberData;
 
-  const response = axios.post(`${baseURL}/unit/createUnit`, body);
+  const response = axios.post(`${baseURL}/unit/createUnit`, {
+    body,
+    headers: {
+      Authorization: `Bearer ${Cookies.get("token")}`,
+    }
+  });
   return response;
 };
 

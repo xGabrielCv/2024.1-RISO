@@ -60,11 +60,11 @@ function HomePage() {
             <ManipulacaoContainer>
                     <Pesquisa placeholder="Pesquise uma Unidade Existente"/>
                     <FillButton onClick={modalIsVisible}>Criar Unidade</FillButton>
+                    <FillButton>Entrar em Unidade</FillButton>
             </ManipulacaoContainer>
             <UnidadesContainer>
                 
             </UnidadesContainer>
-
             {isVisible ? (
                 <Modal>
                     <AddUnitModal

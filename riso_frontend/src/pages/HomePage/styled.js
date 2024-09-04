@@ -30,7 +30,7 @@ export const Pesquisa = styled.input`
   background: white;
   border: solid 1px #58af9b;
   border-radius: 15px;
-  width: 80vw;
+  width: 65vw;
   height: 35px;
 `;
 

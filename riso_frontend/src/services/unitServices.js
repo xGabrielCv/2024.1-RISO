@@ -15,12 +15,16 @@ export function createUnit(nameData, numberOfficialsData, cnpjData, stateData, s
 
   if (numberData) body.number = numberData;
 
-  const response = axios.post(`${baseURL}/unit/createUnit`, {
+  const response = axios.post(
+    `${baseURL}/unit/createUnit`,
     body,
-    headers: {
-      Authorization: `Bearer ${Cookies.get("token")}`,
+    {
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
     }
-  });
+  );
+
   return response;
 };
 

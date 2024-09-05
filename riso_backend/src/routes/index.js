@@ -2,7 +2,7 @@ import { Router } from "express";
 import cors from 'cors';
 import userRouter from "./user.route.js";
 import unitRouter from "./unit.route.js";
-import unitUserRouter from "./unitUser.js";
+import unitUserRouter from "./unitUser.route.js";
 
 const router = Router();
 

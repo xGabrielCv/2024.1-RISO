@@ -54,8 +54,10 @@ const createUser = async (req, res) => {
     if(!user){
       return res.status(403).send({ message: 'Error creating User' });
     }
+
+    const token = userService.generateToken(user.id);
     
-    return res.status(201).send({message: 'User created sucefully', user });
+    return res.status(201).send({message: 'User created sucefully', token });
   }catch(err){
     if (err.code === 11000) {  // Código de erro para violação de chave única em MongoDB/Mongoose
       return res.status(400).send({ message: 'Email already in use', substatus: 2 });
@@ -81,7 +83,9 @@ const loginUser = async (req, res) => {
       return res.status(400).send({ message: 'Password or email is invalid', substatus: 2});
     }
     
-    return res.status(200).send({ message: 'User was found it', user });
+    const token = userService.generateToken(user.id);
+    
+    return res.status(200).send({ message: 'User was found it', token });
   }catch(err) {
     return res.status(500).send({ message: err.message });
   }

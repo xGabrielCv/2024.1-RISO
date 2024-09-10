@@ -7,6 +7,7 @@ import { FillButton } from "../../components/Button/styled";
 import AddUnitModal from "../../components/addUnitModal";
 import CodeModal from "../../components/CodeModal";
 import { createUnit, getAllUnits } from "../../services/unitServices";
+import { createRelationByUnitCode } from "../../services/userUnit";
 
 function HomePage() {
 
@@ -64,6 +65,17 @@ function HomePage() {
         }
     };
 
+    const searchUnit = async (event) => {
+        event.preventDefault();
+        try {
+            await createRelationByUnitCode(code);
+            fetchUnits();
+            setIsVisibleCode(false);
+        } catch (err) {
+            console.log(err.response);
+        }
+    }
+
     function logOut() {
         Cookies.remove("token");
         navigate('/');
@@ -103,6 +115,7 @@ function HomePage() {
                 <Modal>
                     <CodeModal
                         onChangeCode={handleChangeCode}
+                        onClickButton={searchUnit}
                         onClickClose={modalCodeIsVisible}
                     />
                 </Modal>

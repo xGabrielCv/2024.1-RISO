@@ -120,7 +120,7 @@ const updateUnit = async (req, res) => {
     }catch (err){
         return res.status(500).send({message: err.message});
     }
-}
+};
 
 const deleteUnit = async (req,res) => {
     try{

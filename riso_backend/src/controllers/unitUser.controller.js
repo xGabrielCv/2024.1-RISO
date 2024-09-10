@@ -3,6 +3,47 @@ import unitService from "../services/unit.service.js";
 import jwt from 'jsonwebtoken'; // Biblioteca para manipular o JWT
 
 
+// Controller para exibir todas as unidades associadas a um usuário pelo código do usuário
+const getUnitsByUserCode = async (req, res) => {
+  try {
+    // Extração do código do usuário do token JWT
+    const token = req.headers.authorization?.split(' ')[1];
+    if (!token) {
+      return res.status(401).send({ message: 'Token not provided', substatus: 1 });
+    }
+
+    let userId;
+    try {
+      const decoded = jwt.verify(token, process.env.SECRET_JWT); // Decodifica o token
+      userId = decoded._id; // Pega o ID do usuário decodificado do token
+    } catch (err) {
+      return res.status(401).send({ message: 'Invalid token', substatus: 2 });
+    }
+
+    // Busca todas as associações UnitUser para o ID do usuário
+    const unitUsers = await unitUserService.findByUserIdService(userId);
+    if (!unitUsers || unitUsers.length === 0) {
+      return res.status(404).send({ message: 'No units found for this user', substatus: 3 });
+    }
+
+    // Extrai os IDs das unidades das associações
+    const unitIds = unitUsers.map((unitUser) => unitUser.unit);
+
+    // Busca as unidades correspondentes aos IDs
+    const units = await unitService.findByIds(unitIds);
+    if (!units || units.length === 0) {
+      return res.status(404).send({ message: 'Units not found', substatus: 4 });
+    }
+
+    return res.status(200).send({
+      message: 'Units retrieved successfully',
+      units,
+    });
+  } catch (err) {
+    return res.status(500).send({ message: err.message });
+  }
+};
+
 const findAllUnitUser = async (req, res) => {
     try{
       const unitUser = await unitUserService.findAllService();
@@ -66,7 +107,7 @@ const createRelationByUnitCode = async (req, res) => {
     }
 
     // Busca a unidade pelo código fornecido
-    const unit = await unitService.findByCode({ code });
+    const unit = await unitService.findByCode(code);
     if (!unit) {
       return res.status(404).send({ message: 'Unit not found', substatus: 4 });
     }
@@ -152,7 +193,7 @@ const updateUnitUser = async (req, res) => {
   }catch(err) {
     return res.status(500).send({ message: err.message });
   }
-}
+};
 
 const deleteUnitUser = async (req,res) => {
     try{
@@ -172,9 +213,10 @@ const deleteUnitUser = async (req,res) => {
       }catch(err){
         return res.status(500).send({ message: err.message });
       }  
-}
+};
 
 export default {
+  getUnitsByUserCode,
   findAllUnitUser,
   createUnitUser,
   findByUserIdUnitUser,

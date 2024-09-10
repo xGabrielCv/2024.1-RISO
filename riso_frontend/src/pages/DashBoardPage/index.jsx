@@ -13,18 +13,26 @@ function DashBoardPage() {
     const faceApiScript = document.createElement("script");
     faceApiScript.src = "/face-api.min.js"; // Ajuste o caminho conforme necessário
     faceApiScript.async = true;
-    faceApiScript.onload = () => {
-      // Adiciona script.js após face-api.min.js ser carregado
+    
+    // Função para adicionar o script.js após face-api.min.js ser carregado
+    const addScriptJs = () => {
       const script = document.createElement("script");
       script.src = "/script.js"; // Ajuste o caminho conforme necessário
       script.async = true;
       document.body.appendChild(script);
     };
+  
+    faceApiScript.onload = addScriptJs;
     document.body.appendChild(faceApiScript);
-
+  
     // Cleanup: remove os scripts quando o componente é desmontado
     return () => {
       document.body.removeChild(faceApiScript);
+      // Remove script.js se necessário
+      const existingScript = document.querySelector('script[src="/script.js"]');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
     };
   }, []);
 

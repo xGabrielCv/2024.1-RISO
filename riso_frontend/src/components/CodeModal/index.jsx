@@ -20,7 +20,7 @@ function CodeModal({
       <TextInput placeholder="Codigo da Unidade" onChange={onChangeCode}/>
     
       <br />
-      <FillButton onClick={onClickButton}>Salvar</FillButton>
+      <FillButton onClick={onClickButton}>Buscar</FillButton>
     </Card>
   );
 }

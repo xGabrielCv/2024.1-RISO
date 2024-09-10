@@ -1,17 +1,12 @@
 import React, { useEffect } from "react";
-import Cookies from 'js-cookie';
 import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/NavBar";
+import { Card, Superior, TituloCard, SecaoDados } from "./styled";
 
 function DashBoardPage() {
 
   //navigate
   const navigate = useNavigate();
-
-  function logOut() {
-    Cookies.remove("token");
-    navigate('/');
-  }
 
   useEffect(() => {
     // Adiciona face-api.min.js do diretório público
@@ -35,12 +30,22 @@ function DashBoardPage() {
 
   return (
     <div>
-        <NavBar onClick={logOut}/>
+      <NavBar onClick={() => navigate('/HomePage')} text={'Voltar'}/>
 
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        {/* Elemento de vídeo necessário para o reconhecimento facial */}
-        <video id="video" width="720" height="560" autoPlay muted></video>
-      </div>
+      <Superior>
+        <video id="video" width="300" height="450" autoPlay muted></video>
+
+      <SecaoDados>
+        <h1><TituloCard>Taxa de Risos do Dia</TituloCard></h1>
+        <Card>
+          <p>Total de Pessoas Identificadas: <strong></strong></p>
+          <p>Pessoas que Riram: <strong></strong></p>
+          <p>Pessoas que Não Riram: <strong></strong></p>
+          <p>Taxa de Risos: <strong>%</strong></p>
+        </Card>        
+      </SecaoDados>
+      </Superior>
+
     </div>
   );
 }

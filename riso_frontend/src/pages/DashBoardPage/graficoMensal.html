@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico de Barra com Chart.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Importando Chart.js -->
+</head>
+<body>
+  <h1>Gráfico de Barras </h1>
+  <canvas id="myBarChart" width="600" height="300"></canvas> <!-- Área onde o gráfico será renderizado -->
+
+  <script>
+    // Criando o contexto do gráfico (ligando o gráfico ao canvas)
+    const ctx = document.getElementById('myBarChart').getContext('2d');
+    
+    // Criando o gráfico de barras
+    const myBarChart = new Chart(ctx, {
+      type: 'bar', // Tipo de gráfico (bar = barra)
+      data: {
+        labels: [ // Rótulos do eixo X com todos os meses
+          'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+          'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+        ],
+        datasets: [{
+          label: 'Sorrisos Mensais', // Legenda da série de dados
+          data: [ // Dados que serão plotados no gráfico para cada mês
+            12, 19, 3, 5, 2, 3,
+            7, 8, 6, 4, 9, 10
+          ],
+          backgroundColor: [  // Cor de preenchimento de cada barra
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [ // Cor das bordas de cada barra
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1 // Largura da borda das barras
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true // Configuração para o eixo Y começar no zero
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

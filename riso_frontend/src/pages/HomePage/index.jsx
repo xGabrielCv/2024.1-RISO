@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import Cookies from 'js-cookie';
 import NavBar from "../../components/NavBar";
 import { useNavigate } from "react-router-dom";
-import { ManipulacaoContainer, Modal, Pesquisa, UnidadesContainer } from "./styled";
+import { CardRenderUnidades, ManipulacaoContainer, Modal, Pesquisa, UnidadesContainer, UnidadesRenderContainer, ConteinerPagina } from "./styled";
 import { FillButton } from "../../components/Button/styled";
 import AddUnitModal from "../../components/addUnitModal";
-import { createUnit } from "../../services/unitServices";
+import CodeModal from "../../components/CodeModal";
+import { createUnit, getAllUnits } from "../../services/unitServices";
 
 function HomePage() {
 
     //navigate
     const navigate = useNavigate();
 
+    const [units, setUnits] = useState([]);
     const [unitName, setUnitName] = useState('');
     const [employeeNumber, setEmployeeNumber] = useState('');
     const [cnpj, setCnpj] = useState('');
@@ -19,8 +21,9 @@ function HomePage() {
     const [street, setStreet] = useState('');
     const [complement, setComplement] = useState('');
     const [number, setNumber] = useState('');
+    const [code, setCode] = useState('');
     const [isVisible, setIsVisible] = useState(false);
-
+    const [isVisibleCode, setIsVisibleCode] = useState(false);
  
     const handleChangeUnitName = (event) => setUnitName(event.target.value);
     const handleChangeEmployeeNumber = (event) => setEmployeeNumber(event.target.value);
@@ -29,24 +32,37 @@ function HomePage() {
     const handleChangeStreet = (event) => setStreet(event.target.value);
     const handleChangeComplement = (event) => setComplement(event.target.value);
     const handleChangeNumber = (event) => setNumber(event.target.value);
+    const handleChangeCode = (event) => setCode(event.target.value);
 
-    function modalIsVisible() {
-        if (isVisible === false) setIsVisible(true)
-        else setIsVisible(false);
-    }
+    const modalIsVisible = () => setIsVisible(!isVisible);
+    const modalCodeIsVisible = () => setIsVisibleCode(!isVisibleCode);
 
-    async function newUnit(event) {
-        event.preventDefault(); 
+    // Função para buscar todas as unidades
+    const fetchUnits = async () => {
         try {
-            await createUnit(unitName, employeeNumber, cnpj, state, street, complement, number);
-        } catch (err) {
-            console.log(err.response);
+            const response = await getAllUnits();
+            setUnits(response.data.unit); // Define o state com as unidades recebidas
+        } catch (error) {
+            console.log("Erro ao buscar unidades:", error);
         }
-    }
+    };
 
+    // Chama a função de busca quando o componente monta
     useEffect(() => {
-        console.log(Cookies.get("token"));
-    })
+        fetchUnits();
+    }, []);
+
+    // Função para criar nova unidade e atualizar a lista
+    const newUnit = async (event) => {
+        event.preventDefault();
+        try {
+        await createUnit(unitName, employeeNumber, cnpj, state, street, complement, number);
+        fetchUnits(); // Atualiza a lista de unidades após a criação
+        setIsVisible(false); // Fecha o modal após criar a unidade
+        } catch (err) {
+        console.log(err.response);
+        }
+    };
 
     function logOut() {
         Cookies.remove("token");
@@ -54,13 +70,13 @@ function HomePage() {
     }
 
     return (
-        <div>
-            <NavBar onClick={logOut}/>
+        <ConteinerPagina>
+            <NavBar onClick={logOut} text={'Sair'}/>
 
             <ManipulacaoContainer>
                     <Pesquisa placeholder="Pesquise uma Unidade Existente"/>
                     <FillButton onClick={modalIsVisible}>Criar Unidade</FillButton>
-                    <FillButton onClick={() => navigate('/Dashboard')}>Entrar em Unidade</FillButton>
+                    <FillButton onClick={modalCodeIsVisible}>Entrar em Unidade</FillButton>
             </ManipulacaoContainer>
             <UnidadesContainer>
                 
@@ -82,7 +98,28 @@ function HomePage() {
             ) : (
                 <></>
             )}
-        </div>
+
+            {isVisibleCode ? (
+                <Modal>
+                    <CodeModal
+                        onChangeCode={handleChangeCode}
+                        onClickClose={modalCodeIsVisible}
+                    />
+                </Modal>
+            ) : (
+                <></>
+            )}
+
+            <UnidadesRenderContainer>
+            {(units || []).map((unit) => (
+                <CardRenderUnidades key={unit._id} onClick={() => navigate('/Dashboard')}>
+                <h3>{unit.name}</h3>
+                </CardRenderUnidades>
+            ))}
+            </UnidadesRenderContainer>
+
+            <CodeModal></CodeModal>
+        </ConteinerPagina>
     );
 }
 

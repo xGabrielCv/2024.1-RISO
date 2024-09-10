@@ -1,4 +1,7 @@
 import unitUserService from "../services/unitUser.service.js";
+import unitService from "../services/unit.service.js";
+import jwt from 'jsonwebtoken'; // Biblioteca para manipular o JWT
+
 
 const findAllUnitUser = async (req, res) => {
     try{
@@ -37,6 +40,60 @@ const createUnitUser = async (req, res) => {
         return res.status(500).send({message: err.message});
     }
 }
+
+// Controller para criar relação entre usuário e unidade pelo código da unidade
+const createRelationByUnitCode = async (req, res) => {
+  try {
+    const { code } = req.body; // Recebe o código da unidade do body da requisição
+
+    // Verifica se o código foi fornecido
+    if (!code) {
+      return res.status(400).send({ message: 'Unit code is required', substatus: 1 });
+    }
+
+    // Extração do ID do usuário do token JWT
+    const token = req.headers.authorization?.split(' ')[1];
+    if (!token) {
+      return res.status(401).send({ message: 'Token not provided', substatus: 2 });
+    }
+
+    let userId;
+    try {
+      const decoded = jwt.verify(token, process.env.SECRET_JWT); // Decodifica o token
+      userId = decoded._id; // Pega o ID do usuário decodificado do token
+    } catch (err) {
+      return res.status(401).send({ message: 'Invalid token', substatus: 3 });
+    }
+
+    // Busca a unidade pelo código fornecido
+    const unit = await unitService.findByCode({ code });
+    if (!unit) {
+      return res.status(404).send({ message: 'Unit not found', substatus: 4 });
+    }
+
+    // Prepara os dados para criar a relação UnitUser
+    const unitUserData = {
+      user: userId,
+      unit: unit._id,
+      master_adm: false, // Define `master_adm` como necessário, ajuste conforme sua lógica
+    };
+
+    // Cria a relação UnitUser utilizando o serviço
+    const unitUser = await unitUserService.createService(unitUserData);
+
+    return res.status(201).send({
+      message: 'Relation between user and unit created successfully',
+      unitUser,
+    });
+  } catch (err) {
+    if (err.code === 11000) {
+      // Trata o erro de violação de chave única do MongoDB/Mongoose
+      return res.status(400).send({ message: 'Relation already exists', substatus: 5 });
+    }
+
+    return res.status(500).send({ message: err.message });
+  }
+};
 
 const findByUserIdUnitUser = async (req, res) => {
   try {
@@ -124,4 +181,5 @@ export default {
   findAllUsersByUnitIdUserUnit,
   updateUnitUser,
   deleteUnitUser,
+  createRelationByUnitCode
 };

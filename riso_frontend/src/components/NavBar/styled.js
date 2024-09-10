@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Navegacao = styled.nav`
-  max-width: 100vw;
+  position: fixed;
+  width: 100vw;
   height: 60px;
   display: flex;
   flex-direction: row;

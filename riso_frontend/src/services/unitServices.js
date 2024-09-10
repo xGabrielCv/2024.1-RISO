@@ -3,6 +3,19 @@ import Cookies from 'js-cookie';
 
 const baseURL = 'http://localhost:3000';
 
+export function getAllUnits(){
+  const response = axios.get(
+    `${baseURL}/unit/findAllUnit`,
+    {
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    }
+  );
+
+  return response;
+};
+
 export function createUnit(nameData, numberOfficialsData, cnpjData, stateData, streetData, complementData, numberData){
   const body = {
       name: nameData,

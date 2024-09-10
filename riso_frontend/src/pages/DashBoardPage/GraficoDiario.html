@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico de Linhas com Chart.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Importando Chart.js -->
+</head>
+<body>
+  <h1>Gráfico de Linhas</h1>
+  <canvas id="myLineChart" width="600" height="300"></canvas> <!-- Área onde o gráfico será renderizado -->
+
+  <script>
+    // Criando o contexto do gráfico (ligando o gráfico ao canvas)
+    const ctx = document.getElementById('myLineChart').getContext('2d');
+    
+    // Criando o gráfico de linhas
+    const myLineChart = new Chart(ctx, {
+      type: 'line', // Tipo de gráfico (line = linha)
+      data: {
+        labels: [ // Rótulos do eixo X com todos os meses
+          'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+          'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+        ],
+        datasets: [{
+          label: 'Sorrisos Diarios', // Legenda da série de dados
+          data: [ // Dados que serão plotados no gráfico para cada mês
+            12, 19, 3, 5, 2, 3,
+            7, 8, 6, 4, 9, 10
+          ],
+          borderColor: 'rgba(75, 192, 192, 1)', // Cor da linha
+          backgroundColor: 'rgba(75, 192, 192, 0.2)', // Cor de fundo da linha (opcional)
+          borderWidth: 2, // Largura da linha
+          tension: 0.1 // Curvatura da linha
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true // Configuração para o eixo Y começar no zero
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

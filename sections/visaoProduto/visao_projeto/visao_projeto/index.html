@@ -1,0 +1,2191 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../visao_produto/visao_produto/">
+      
+      
+        <link rel="next" href="../../processo_desenv/processo_desenv/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Visão Geral do Projeto - RISo Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/styles.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-visao-geral-do-projeto" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="RISo Docs" class="md-header__button md-logo" aria-label="RISo Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RISo Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visão Geral do Projeto
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="RISo Docs" class="md-nav__button md-logo" aria-label="RISo Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RISo Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Início
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sobre a Facção
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sobre a Facção
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faccao/faccao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historia da Facção
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faccao/integrantes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrantes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visão do Produto e Projeto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Visão do Produto e Projeto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao_produto/visao_produto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral do Produto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Visão Geral do Projeto
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral do Projeto
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-organizacao-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Organização do Projeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-planejamento-das-fases-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Planejamento das Fases do Projeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-matriz-de-comunicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Matriz de Comunicação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-gerenciamento-de-riscos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Gerenciamento de Riscos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Gerenciamento de Riscos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-probabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 Probabilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-impacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 Impacto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-prioridade" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3 Prioridade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-historico-de-riscos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.4 Histórico de Riscos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-criterios-de-replanejamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Critérios de Replanejamento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Critérios de Replanejamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-identificacao-de-criterios" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.1 Identificação de Critérios:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5.1 Identificação de Critérios:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c01-alteracao-nos-prazos-das-entregas" class="md-nav__link">
+    <span class="md-ellipsis">
+      C01 - Alteração nos prazos das entregas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c02-alteracao-das-tecnologias-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      C02 - Alteração das Tecnologias do projeto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c03-alteracao-no-processo-de-engenharia-de-requisitos-ou-desenvolvimento-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      C03 - Alteração no Processo de Engenharia de Requisitos ou Desenvolvimento de Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c04-alteracao-no-escopo-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      C04 - Alteração no Escopo do Projeto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c05-barreiras-externas-para-execucao-do-projeto-tais-como-aparatos-legais-valor-financeiro-inacessivel-capacidade-dos-hardwares-dos-desenvolvedores-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      C05 - Barreiras externas para execução do projeto, tais como: aparatos legais, valor financeiro inacessível, capacidade dos hardwares dos desenvolvedores, etc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c06-saida-de-algum-membro-da-equipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      C06 - Saída de algum membro da equipe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c07-divergencia-de-horarios-entre-membros-da-equipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      C07 - Divergência de horários entre membros da equipe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c08-dificuldades-da-equipe-com-as-novas-tecnologias-inseridas" class="md-nav__link">
+    <span class="md-ellipsis">
+      C08 - Dificuldades da equipe com as novas tecnologias inseridas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c09-ausencia-de-membros-durante-reunioes-do-grupo" class="md-nav__link">
+    <span class="md-ellipsis">
+      C09 - Ausência de membros durante reuniões do grupo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c10-problemas-pessoais-ou-de-saude" class="md-nav__link">
+    <span class="md-ellipsis">
+      C10 - Problemas pessoais ou de saúde
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c11-falta-de-comprometimento-dos-membros-com-o-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      C11 - Falta de comprometimento dos membros com o projeto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-historico-de-riscos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.4 Histórico de Riscos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histórico de Versão:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processo_desenv/processo_desenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processo de Desenvolvimento de Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licoesAprendidas/licoesAprendidas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lições Aprendidas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia_bibliografica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referência Bibliográfica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../historico_versao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Histórico de Versão
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ciclos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ciclos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ciclos/planejamento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planejamento Geral dos Ciclos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ciclos/ciclo1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ciclo 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ciclos/ciclo2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ciclo 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ciclos/ciclo3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ciclo 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ciclos/ciclo4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ciclo 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ciclos/ciclo5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ciclo 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ciclos/ciclo6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ciclo 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ciclos/ciclo7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ciclo 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Entregas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Entregas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unidade 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Unidade 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../entregas/unidade1/apresentacao1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Missão 1 | Apresentação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../entregas/unidade1/video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Missão 1 | Video de Apresentação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unidade 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unidade 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../entregas/unidade2/apresentacao2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Missão 2 | Backlog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../entregas/unidade2/video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Missão 2 | Video de Apresentação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unidade 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Unidade 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../entregas/unidade3/pbb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Missão 3 | PPB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../entregas/unidade3/usm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Missão 3 | USM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../entregas/unidade3/VeriVal-PBB-CalorieExplorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Missão 4 | VeriVal-PBB- CalorieExplorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Backlog do Produto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Backlog do Produto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../historiasUsuarios/US/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funcionalidades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Políticas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Políticas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../politicas/GCS/GCS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GSC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-organizacao-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Organização do Projeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-planejamento-das-fases-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Planejamento das Fases do Projeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-matriz-de-comunicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Matriz de Comunicação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-gerenciamento-de-riscos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Gerenciamento de Riscos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Gerenciamento de Riscos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-probabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 Probabilidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-impacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 Impacto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-prioridade" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3 Prioridade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-historico-de-riscos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.4 Histórico de Riscos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-criterios-de-replanejamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Critérios de Replanejamento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Critérios de Replanejamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-identificacao-de-criterios" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.1 Identificação de Critérios:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5.1 Identificação de Critérios:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c01-alteracao-nos-prazos-das-entregas" class="md-nav__link">
+    <span class="md-ellipsis">
+      C01 - Alteração nos prazos das entregas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c02-alteracao-das-tecnologias-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      C02 - Alteração das Tecnologias do projeto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c03-alteracao-no-processo-de-engenharia-de-requisitos-ou-desenvolvimento-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      C03 - Alteração no Processo de Engenharia de Requisitos ou Desenvolvimento de Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c04-alteracao-no-escopo-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      C04 - Alteração no Escopo do Projeto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c05-barreiras-externas-para-execucao-do-projeto-tais-como-aparatos-legais-valor-financeiro-inacessivel-capacidade-dos-hardwares-dos-desenvolvedores-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      C05 - Barreiras externas para execução do projeto, tais como: aparatos legais, valor financeiro inacessível, capacidade dos hardwares dos desenvolvedores, etc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c06-saida-de-algum-membro-da-equipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      C06 - Saída de algum membro da equipe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c07-divergencia-de-horarios-entre-membros-da-equipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      C07 - Divergência de horários entre membros da equipe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c08-dificuldades-da-equipe-com-as-novas-tecnologias-inseridas" class="md-nav__link">
+    <span class="md-ellipsis">
+      C08 - Dificuldades da equipe com as novas tecnologias inseridas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c09-ausencia-de-membros-durante-reunioes-do-grupo" class="md-nav__link">
+    <span class="md-ellipsis">
+      C09 - Ausência de membros durante reuniões do grupo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c10-problemas-pessoais-ou-de-saude" class="md-nav__link">
+    <span class="md-ellipsis">
+      C10 - Problemas pessoais ou de saúde
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c11-falta-de-comprometimento-dos-membros-com-o-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      C11 - Falta de comprometimento dos membros com o projeto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-historico-de-riscos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.4 Histórico de Riscos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histórico de Versão:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="2-visao-geral-do-projeto">2.    Visão Geral do Projeto</h1>
+<h2 id="21-organizacao-do-projeto">2.1  Organização do Projeto</h2>
+<table>
+<thead>
+<tr>
+<th>Papel</th>
+<th>Atribuições</th>
+<th>Responsável</th>
+<th>Participantes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pessoa Desenvolvedora</td>
+<td>Codificar o produto, realizar refatoração, testar, configurar, versionar, evoluir, integrar, documentar, ata das reuniões, estratégia de código</td>
+<td>Daniel Rodrigues</td>
+<td>Jesus Gabriel, João Pedro, Marco Tulio, Joyce, Lucas Antunes</td>
+</tr>
+<tr>
+<td>Líder do Time</td>
+<td>Delegar tarefas, duração da Ciclo, organização das atividades, one-to-one com os membros, estratégia de produto</td>
+<td>Marco Tulio</td>
+<td>Daniel Rodrigues</td>
+</tr>
+<tr>
+<td>Pessoa Engenheira de Requisitos</td>
+<td>Descobrir, elicitar, analisar, consensuar, declarar, representar, organizar e atualizar requisitos</td>
+<td>Marco Tulio</td>
+<td>Lucas,Daniel,Joyce</td>
+</tr>
+<tr>
+<td>Cliente</td>
+<td>Fornecer insumos para requisitos, fornecer feedbacks sobre os produtos, priorizar requisitos</td>
+<td>Lucas Antunes</td>
+<td>Arthur Bennet</td>
+</tr>
+<tr>
+<td>Monitor</td>
+<td>Verificar requisitos, fornecer feedbacks sobre o processo de ER, auxiliar em dúvidas da equipe acerca da disciplina de requisitos, articular os interesses do professor</td>
+<td>João Pedro</td>
+<td>Pedro Henrique</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-planejamento-das-fases-do-projeto">2.2  Planejamento das Fases do Projeto</h2>
+<table>
+<thead>
+<tr>
+<th>Ciclo</th>
+<th>Produto (Entrega)</th>
+<th>Data Início</th>
+<th>Data Fim</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ciclo 1</td>
+<td>Requisitos descobertos, elicitados, analisados e consensuados</td>
+<td>10/07/24</td>
+<td>17/07/24</td>
+</tr>
+<tr>
+<td>Ciclo 2</td>
+<td>Requisitos validados, verificados e declarados</td>
+<td>17/07/24</td>
+<td>24/07/24</td>
+</tr>
+<tr>
+<td>Ciclo 3</td>
+<td>Requisitos organizados e atualizados, escopo definido do MVP e Funcionalidades Incrementais</td>
+<td>24/07/24</td>
+<td>31/07/24</td>
+</tr>
+<tr>
+<td>Ciclo 4</td>
+<td>Reestruturação da Equipe</td>
+<td>31/07/24</td>
+<td>07/08/24</td>
+</tr>
+<tr>
+<td>Ciclo 5</td>
+<td>US01, US02 e US03</td>
+<td>07/08/23</td>
+<td>14/08/23</td>
+</tr>
+<tr>
+<td>Ciclo 6</td>
+<td>US06, US04 e US07</td>
+<td>14/08/23</td>
+<td>21/08/23</td>
+</tr>
+<tr>
+<td>Ciclo 7</td>
+<td>US05, US08 e US09</td>
+<td>21/08/23</td>
+<td>28/08/23</td>
+</tr>
+<tr>
+<td>Ciclo 8</td>
+<td>US10 e US11</td>
+<td>28/08/23</td>
+<td>04/09/23</td>
+</tr>
+<tr>
+<td>Ciclo 9</td>
+<td>Testes e Revisão</td>
+<td>04/09/23</td>
+<td>11/09/23</td>
+</tr>
+</tbody>
+</table>
+<h2 id="23-matriz-de-comunicacao">2.3  Matriz de Comunicação</h2>
+<table>
+<thead>
+<tr>
+<th>Descrição</th>
+<th>Área/Envolvidos</th>
+<th>Periodicidade</th>
+<th>Produtos Gerados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acompanhamento das atividades em progresso</td>
+<td>Equipe do Projeto</td>
+<td>Semanal</td>
+<td>Relatorio de Situação do Projeto</td>
+</tr>
+<tr>
+<td>Acompanhamento de Ciclo</td>
+<td>Equipe do Projeto e Monitor</td>
+<td>Semanal</td>
+<td>Ata da Reunião, Relação de Feedbacks sobre as Entregas do Produto</td>
+</tr>
+<tr>
+<td>Comunicar a situação do projeto</td>
+<td>Equipe do Projeto e Professor</td>
+<td>Mensalmente</td>
+<td>Artefatos solicitados, Relação de Feedbacks do Professor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="24-gerenciamento-de-riscos">2.4  Gerenciamento de Riscos</h2>
+<p>A análise e gerenciamento de riscos referem-se à identificação dos possíveis pontos que podem representar riscos para o projeto. Precisam ser acompanhados, a cada acompanhamento das fases, se referindo assim, ao projeto como um todo e não apenas ao produto.</p>
+<p>Segundo Charette, existem três tipos de riscos de Software (PRESSMAN,2006):</p>
+<ol>
+<li><strong>Riscos de projeto</strong>: mostram problemas potenciais de orçamento, cronograma, organizacionais que impactam o projeto;</li>
+<li><strong>Riscos técnicos</strong>: perturbam a qualidade e a entrega do software. Também mostram problemas potenciais de projeto, implementação, interface, verificação e manutenção;</li>
+<li><strong>Riscos de negócio</strong>: ameaçam a viabilidade do software e do produto e apresentam 5 variações:<ol>
+<li>Risco de Mercado: criar um excelente produto ou sistema que ninguém realmente quer;</li>
+<li>Risco Estratégico: criar um produto que não se encaixe mais na estratégia geral de negócios da empresa;</li>
+<li>Risco de Vendas: criar um produto que a equipe de vendas não sabe como vender;</li>
+<li>Risco Gerencial: perda de suporte da alta gerência devido à mudança no foco ou mudança de profissionais;</li>
+<li>Risco de Orçamento: perda do orçamento ou do comprometimento dos profissionais.</li>
+</ol>
+</li>
+</ol>
+<p>A análise dos riscos levará em consideração 2 variáveis:</p>
+<h3 id="241-probabilidade">2.4.1 Probabilidade</h3>
+<p>A probabilidade indica a chance de um risco se materializar no projeto. Quanto maior a probabilidade, maior a chance de o risco ocorrer, o que exige maior atenção e planejamento. Ao identificar e avaliar esses riscos, a equipe de projeto pode desenvolver estratégias para mitigar ou gerenciar os impactos potenciais, aumentando as chances de sucesso do projeto.</p>
+<table>
+<thead>
+<tr>
+<th>Probabilidade</th>
+<th>Intervalo</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Muito Alta</strong></td>
+<td>81% à 100%</td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>Alta</strong></td>
+<td>61% à 80%</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Média</strong></td>
+<td>41% à 60%</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>Baixa</strong></td>
+<td>21% à 40%</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Muto Baixa</strong></td>
+<td>0% à 20%</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="242-impacto">2.4.2 Impacto</h3>
+<p>Para se quantificar o impacto do risco no projeto o custo, o tempo, o escopo e a qualidade devem ser levados em conta:</p>
+<table>
+<thead>
+<tr>
+<th>Impacto</th>
+<th>Descrição</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Catastrófico</strong></td>
+<td>Impacto Inviabiliza o Projeto</td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>Grande</strong></td>
+<td>Há grande impacto no desenvolvimento do projeto</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Moderado</strong></td>
+<td>Possui certo impacto, porém é facilmente recuperado</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>Pequeno</strong></td>
+<td>Pouco impacto no desenvolvimento do projeto</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Insignificante</strong></td>
+<td>Impacto pouco expressivo no desenvovimento do Projeto</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="243-prioridade">2.4.3 Prioridade</h3>
+<p>Através da equação <em>[(Probabilidade) x (Impacto)]</em> é possível calcular a prioridade dos riscos. A partir desses valores é determinada a urgência da inicialização de medidas de mitigação e resolução dos riscos, tal como na matriz abaixo:</p>
+<p><img alt="Matriz de Prioridade" src="../../../../assets/MatrizRiscos.png" />
+<center> Figura 1 - Matriz de Riscos (UFV, 2021) </center></p>
+<h3 id="234-historico-de-riscos">2.3.4 Histórico de Riscos:</h3>
+<table>
+<thead>
+<tr>
+<th>Ciclo</th>
+<th>Tipo de Risco</th>
+<th>Probabilidade</th>
+<th>Impacto</th>
+<th>Grau do Risco - Prioridade</th>
+<th>Contramedida Tomada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ciclo 1</td>
+<td>Risco de Projeto</td>
+<td>Muito Baixa</td>
+<td>Catastrófrico</td>
+<td>Risco Moderado</td>
+<td>Após a greve de docentes, todo o cronograma foi redefinido</td>
+</tr>
+<tr>
+<td>Ciclo 2</td>
+<td>Risco de Projeto</td>
+<td>Média</td>
+<td>Pequeno</td>
+<td>Risco Pequeno</td>
+<td>Alocação de mais responsáveis em certas atribuições</td>
+</tr>
+<tr>
+<td>Ciclo 2</td>
+<td>Risco de Projeto</td>
+<td>Baixa</td>
+<td>Grande</td>
+<td>Risco Alto</td>
+<td>Adoção de outros meios de comunicação com o Cliente</td>
+</tr>
+<tr>
+<td>Ciclo 4</td>
+<td>Risco de Projeto</td>
+<td>Alta</td>
+<td>Moderado</td>
+<td>Risco Alto</td>
+<td>Promover 1 intervalo de descanso, sem atividade durante 1 ciclo para a motivação do time</td>
+</tr>
+<tr>
+<td>Ciclo 5</td>
+<td>Risco de Projeto</td>
+<td>Alta</td>
+<td>Moderado</td>
+<td>Risco Alto</td>
+<td>A atividade foi estendida, e novos responsáveis foram alocados.</td>
+</tr>
+<tr>
+<td>Ciclo 6</td>
+<td>Risco de Projeto</td>
+<td>Alta</td>
+<td>Grande</td>
+<td>Risco Alto</td>
+<td>A atividade foi estendida, e novos responsáveis foram alocados.</td>
+</tr>
+<tr>
+<td>Ciclo 7</td>
+<td>Risco de Projeto</td>
+<td>Alta</td>
+<td>Grande</td>
+<td>Risco Alto</td>
+<td>A atividade foi estendida, e novos responsáveis foram alocados.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="25-criterios-de-replanejamento">2.5  Critérios de Replanejamento</h2>
+<p>Os critérios de replanejamento referem-se à identificação dos pontos que, caso ocorram, causarão um replanejamento do projeto. Precisam ser acompanhados a cada Ciclo, referindo-se assim, ao projeto como um todo e não apenas ao produto.</p>
+<h3 id="251-identificacao-de-criterios">2.5.1 Identificação de Critérios:</h3>
+<h4 id="c01-alteracao-nos-prazos-das-entregas">C01 - Alteração nos prazos das entregas</h4>
+<p><strong>Categoria:</strong> Risco de Projeto.<br>
+<strong>Causa:</strong> Atrasos ou imprevistos provocaram débitos de algumas atividades.<br>
+<strong>Consequência:</strong> Extensão dos prazos das atividades debitadas.</p>
+<h4 id="c02-alteracao-das-tecnologias-do-projeto">C02 - Alteração das Tecnologias do projeto</h4>
+<p><strong>Categoria:</strong> Risco Técnico.<br>
+<strong>Causa:</strong> Troca de linguagem de programação ou qualquer ferramenta de gestão e controle do time.<br>
+<strong>Consequência:</strong> Refatoração do código ou reorganização do projeto nas novas ferramentas de gestão.</p>
+<h4 id="c03-alteracao-no-processo-de-engenharia-de-requisitos-ou-desenvolvimento-de-software">C03 - Alteração no Processo de Engenharia de Requisitos ou Desenvolvimento de Software</h4>
+<p><strong>Categoria:</strong> Risco Técnico.<br>
+<strong>Causa:</strong> Mudança no método de organizção do time, método de organização dos requisistos ou produção.
+<strong>Consequência:</strong> Reorganização dos papéis do time e atualização de documentação dos requisistos e do processo.</p>
+<h4 id="c04-alteracao-no-escopo-do-projeto">C04 - Alteração no Escopo do Projeto</h4>
+<p><strong>Categoria:</strong> Risco de Projeto.<br>
+<strong>Causa:</strong> Surgimento de novos requisitos.<br>
+<strong>Consequência:</strong> Replanejamento do projeto.</p>
+<h4 id="c05-barreiras-externas-para-execucao-do-projeto-tais-como-aparatos-legais-valor-financeiro-inacessivel-capacidade-dos-hardwares-dos-desenvolvedores-etc">C05 - Barreiras externas para execução do projeto, tais como: aparatos legais, valor financeiro inacessível, capacidade dos hardwares dos desenvolvedores, etc</h4>
+<p><strong>Categoria:</strong> Risco Técnico.<br>
+<strong>Causa:</strong> Qualquer problema não gerado pelo time de desenvolvimento, isto é, problemas fogem do controle do processo de desenvolvimento.<br>
+<strong>Consequência:</strong> Estudo do problema e adaptação do time para reverter o problema.</p>
+<h4 id="c06-saida-de-algum-membro-da-equipe">C06 - Saída de algum membro da equipe</h4>
+<p><strong>Categoria:</strong> Risco de Projeto.<br>
+<strong>Causa:</strong> Membro retirou ou trancou a disciplina.<br>
+<strong>Consequência:</strong> Realocação dos membros desenvolvedores nas atividades do projeto.</p>
+<h4 id="c07-divergencia-de-horarios-entre-membros-da-equipe">C07 - Divergência de horários entre membros da equipe</h4>
+<p><strong>Categoria:</strong> Risco de Projeto.<br>
+<strong>Causa:</strong> Membros com grades horárias muito distintas.<br>
+<strong>Consequência:</strong> Dificuldade para reunir toda a equipe e realizar os pareamentos.</p>
+<h4 id="c08-dificuldades-da-equipe-com-as-novas-tecnologias-inseridas">C08 - Dificuldades da equipe com as novas tecnologias inseridas</h4>
+<p><strong>Categoria:</strong> Risco Técnico.<br>
+<strong>Causa:</strong> Inexperiência de alguns membros.<br>
+<strong>Consequência:</strong> Surgimento de dívidas técnicas pela dificuldade em realizar os objetivos propostos.</p>
+<h4 id="c09-ausencia-de-membros-durante-reunioes-do-grupo">C09 - Ausência de membros durante reuniões do grupo</h4>
+<p><strong>Categoria:</strong> Risco de Projeto.<br>
+<strong>Causa:</strong> Membros sobrecarregados ou desestimulados com o projeto.<br>
+<strong>Consequência:</strong> Membros perdidos na sprint e maior carga de trabalho para o restante da equipe.</p>
+<h4 id="c10-problemas-pessoais-ou-de-saude">C10 - Problemas pessoais ou de saúde</h4>
+<p><strong>Categoria:</strong> Risco de Projeto.<br>
+<strong>Causa:</strong> Problemas pessoais/doenças ou viagens dos membros da equipe.<br>
+<strong>Consequência:</strong> Capacidade de trabalho da equipe prejudicada e atrasos no cronograma.</p>
+<h4 id="c11-falta-de-comprometimento-dos-membros-com-o-projeto">C11 - Falta de comprometimento dos membros com o projeto</h4>
+<p><strong>Categoria:</strong> Riscos de Projeto.<br>
+<strong>Causa:</strong> Desânimo com o curso, problemas pessoais ou de saúde, excesso de compromissos, entre outros.<br>
+<strong>Consequência:</strong> Issues não entregues, dívida técnica e replanejamento.</p>
+<p>Os critérios de replanejamento do projeto devem ser acompanhados e atualizados a cada fase. E, aplicados, conforme necessidade.</p>
+<h3 id="234-historico-de-riscos_1">2.3.4 Histórico de Riscos:</h3>
+<table>
+<thead>
+<tr>
+<th>Ciclo</th>
+<th>Problema</th>
+<th>Solução Encontrada</th>
+<th>Resultado Esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ciclo 1</td>
+<td>C01</td>
+<td>Paralização do projeto RISO durante a greve e Refurmulação de todo o Cronograma de ciclos</td>
+<td>Definição e reestruturação completa do desenvolvmento do Projeto</td>
+</tr>
+<tr>
+<td>Ciclo 1</td>
+<td>C11</td>
+<td>Utilização da ferramenta Jira para acompanhar, de forma mais rídiga, o controle do progresso do time</td>
+<td>Controle maior sobre as obrigações do time e maior liberdade de produção aos membros</td>
+</tr>
+<tr>
+<td>Ciclo 2</td>
+<td>C10</td>
+<td>Redistribuição dos membros nas atividades para suprir os membros que entraram de viagem</td>
+<td>As atividades foram uniformemente distribuídas</td>
+</tr>
+<tr>
+<td>Ciclo 2</td>
+<td>C09</td>
+<td>Exposição das Pautas debatidas na reunião em forma de ata para os membros ausentes</td>
+<td>Acesso à todo o conteúdo perdido para os membros ausentes</td>
+</tr>
+<tr>
+<td>Ciclo 2</td>
+<td>C01</td>
+<td>Debitamento da atividade atrasada para o ciclo seguinte e adição de um responsável auxiliar</td>
+<td>Conclusão da Atividade no prazo</td>
+</tr>
+<tr>
+<td>Ciclo 2</td>
+<td>C11</td>
+<td>Motivação de uma maior comunicação pelo WhatsApp entre os membros</td>
+<td>Maior comunicação e engajamento do time com o projeto</td>
+</tr>
+<tr>
+<td>Ciclo 4</td>
+<td>C11</td>
+<td>Interrupção das atividades do ciclo</td>
+<td>Maior energia e motivação para recomeçar as atividades</td>
+</tr>
+<tr>
+<td>Ciclo 4</td>
+<td>C01</td>
+<td>Redistribuição das US do projeto para compensar a paralisação do ciclo anterior</td>
+<td>Entrega das funcionalidades dentro do prazo</td>
+</tr>
+<tr>
+<td>Ciclo 5</td>
+<td>C11</td>
+<td>A atividade foi estendida, e novos responsáveis foram alocados.</td>
+<td>Maior energia e motivação para continuar as atividades</td>
+</tr>
+<tr>
+<td>Ciclo 5</td>
+<td>C08</td>
+<td>A atividade foi estendida, e novos responsáveis foram alocados.</td>
+<td>Atraso nas atividades devido a inexperiência de alguns membros sera resolvida</td>
+</tr>
+<tr>
+<td>Ciclo 6</td>
+<td>C11</td>
+<td>A atividade foi estendida, e novos responsáveis foram alocados.</td>
+<td>Maior energia e motivação para continuar as atividades</td>
+</tr>
+<tr>
+<td>Ciclo 6</td>
+<td>C08</td>
+<td>A atividade foi estendida, e novos responsáveis foram alocados.</td>
+<td>Atraso nas atividades devido a inexperiência de alguns membros sera resolvida</td>
+</tr>
+<tr>
+<td>Ciclo 7</td>
+<td>C11</td>
+<td>A atividade foi estendida, e novos responsáveis foram alocados.</td>
+<td>Maior energia e motivação para continuar as atividades</td>
+</tr>
+<tr>
+<td>Ciclo 7</td>
+<td>C08</td>
+<td>A atividade foi estendida, e novos responsáveis foram alocados.</td>
+<td>Atraso nas atividades devido a inexperiência de alguns membros sera resolvida</td>
+</tr>
+</tbody>
+</table>
+<h2 id="historico-de-versao">Histórico de Versão:</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autor</th>
+<th>Revisores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>31/07/24</td>
+<td>1.0</td>
+<td>Criação do documento</td>
+<td>Daniel Rodrigues</td>
+<td>Jésus Gabriel</td>
+</tr>
+<tr>
+<td>04/09/24</td>
+<td>1.1</td>
+<td>Atualização do documento</td>
+<td>Jésus Gabriel</td>
+<td>Daniel Rodrigues</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

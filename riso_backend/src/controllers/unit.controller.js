@@ -1,4 +1,7 @@
 import unitService from "../services/unit.service.js";
+import unitUserService from "../services/unitUser.service.js";
+import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
 
 const findAllUnit = async (req, res) => {
     try{
@@ -77,6 +80,18 @@ const createUnit = async (req, res) => {
 
         const unit = await unitService.createService(unitData);
 
+        // Extração do ID do usuário a partir do token JWT nos headers
+        const token = req.headers.authorization.split(' ')[1]; // Obtém o token após o 'Bearer'
+        const decoded = jwt.verify(token, process.env.SECRET_JWT); // Decodifica o token com a chave secreta do JWT
+        const userId = decoded._id; // Pega o ID do usuário decodificado
+
+        // Criação da relação entre usuário e unidade
+        await unitUserService.createService({
+            user: userId,
+            unit: unit._id,
+            master_adm: true, // Define como administrador principal ou ajuste conforme necessário
+        });
+
         return res.status(200).send({message: 'Unity and company successfully created ', unit});
     }catch (err){
         if (err.code === 11000) {  // Código de erro para violação de chave única em MongoDB/Mongoose
@@ -105,7 +120,7 @@ const updateUnit = async (req, res) => {
     }catch (err){
         return res.status(500).send({message: err.message});
     }
-}
+};
 
 const deleteUnit = async (req,res) => {
     try{

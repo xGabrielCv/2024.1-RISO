@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico de Linhas com Chart.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Importando Chart.js -->
+</head>
+<body>
+  <h1>Gráfico de Linhas</h1>
+
+  <!-- Seletor de Mês -->
+  <label for="monthSelector">Selecione o Mês:</label>
+  <select id="monthSelector" onchange="filterByMonth()">
+    <option value="all">Todos os Meses</option>
+    <option value="Janeiro">Janeiro</option>
+    <option value="Fevereiro">Fevereiro</option>
+    <option value="Março">Março</option>
+    <option value="Abril">Abril</option>
+    <option value="Maio">Maio</option>
+    <option value="Junho">Junho</option>
+    <option value="Julho">Julho</option>
+    <option value="Agosto">Agosto</option>
+    <option value="Setembro">Setembro</option>
+    <option value="Outubro">Outubro</option>
+    <option value="Novembro">Novembro</option>
+    <option value="Dezembro">Dezembro</option>
+  </select>
+
+  <!-- Botão para mostrar todos os dados mensais -->
+  <button onclick="showMonthlyData()">Mostrar Dados Mensais</button>
+
+  <canvas id="myLineChart" width="600" height="300"></canvas> <!-- Área onde o gráfico será renderizado -->
+
+  <script>
+    // Dados originais de sorrisos diários
+    const originalData = [12, 9, 3, 5, 2, 3, 7, 8, 6, 4, 9, 10];
+
+    // Calculando a média geral dos sorrisos diários
+    const averageSmileData = Array(12).fill(
+      originalData.reduce((a, b) => a + b, 0) / originalData.length
+    );
+
+    // Criando o contexto do gráfico (ligando o gráfico ao canvas)
+    const ctx = document.getElementById('myLineChart').getContext('2d');
+    
+    // Criando o gráfico de linhas
+    const myLineChart = new Chart(ctx, {
+      type: 'line', // Tipo de gráfico (line = linha)
+      data: {
+        labels: [ // Rótulos do eixo X com todos os meses
+          'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+          'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+        ],
+        datasets: [
+          {
+            label: 'Sorrisos Diários', // Legenda da série de dados
+            data: originalData, // Dados de sorrisos diários para cada mês
+            borderColor: 'rgba(75, 192, 192, 1)', // Cor da linha
+            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Cor de fundo da linha (opcional)
+            borderWidth: 2, // Largura da linha
+            tension: 0.1 // Curvatura da linha
+          },
+          {
+            label: 'Média de Sorrisos Diários', // Legenda da média de sorrisos
+            data: averageSmileData, // Média dos sorrisos
+            borderColor: 'rgba(255, 99, 132, 1)', // Cor da linha da média
+            backgroundColor: 'rgba(255, 99, 132, 0.2)', // Cor de fundo da linha da média (opcional)
+            borderWidth: 2, // Largura da linha da média
+            borderDash: [5, 5], // Linha pontilhada para a média
+            tension: 0.1 // Curvatura da linha
+          }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true // Configuração para o eixo Y começar no zero
+          }
+        }
+      }
+    });
+
+    // Função para mostrar os dados mensais originais
+    function showMonthlyData() {
+      myLineChart.data.labels = [
+        'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+        'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+      ];
+      myLineChart.data.datasets[0].data = originalData;
+      myLineChart.update();
+    }
+
+    // Função para filtrar os dados por mês e mostrar os dados diários/semanas
+    function filterByMonth() {
+      const selectedMonth = document.getElementById('monthSelector').value;
+      
+      if (selectedMonth === 'all') {
+        showMonthlyData();
+      } else {
+        // Exemplo de dados diários/semanas para cada mês específico
+        const dailyData = {
+          'Janeiro': [0.4, 0.3, 0.1, 0.16, 0.06, 0.1, 0.23],
+          'Fevereiro': [0.3, 0.4, 0.2, 0.12, 0.08, 0.15, 0.24],
+          // Adicione dados diários/semanas para outros meses aqui
+        };
+
+        myLineChart.data.labels = ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4', 'Semana 5', 'Semana 6', 'Semana 7'];
+        myLineChart.data.datasets[0].data = dailyData[selectedMonth] || [];
+        myLineChart.update();
+      }
+    }
+  </script>
+</body>
+</html>

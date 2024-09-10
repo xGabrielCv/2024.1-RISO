@@ -6,6 +6,7 @@ import { createGlobalStyle } from 'styled-components';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
+import DashBoardPage from './pages/DashBoardPage';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -29,6 +30,7 @@ function App() {
             <Route path='/' element={<RegisterPage />} />
             <Route path='/Login' element={<LoginPage />} />
             <Route path='/HomePage' element={<HomePage />} />
+            <Route path='/Dashboard' element={<DashBoardPage />} />
           </Routes>
       </Router>
   );

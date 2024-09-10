@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico de Barra com Chart.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Importando Chart.js -->
+</head>
+<body>
+  <h1>Gráfico de Barras</h1>
+
+  <!-- Botões para selecionar o filtro -->
+  <button onclick="mostrarDadosMensais()">Mostrar Dados Mensais</button>
+  <label for="mesSelect">Selecione o Mês:</label>
+  <select id="mesSelect" onchange="atualizarMesSelecionado()">
+    <option value="">Selecione</option>
+    <option value="0">Janeiro</option>
+    <option value="1">Fevereiro</option>
+    <option value="2">Março</option>
+    <option value="3">Abril</option>
+    <option value="4">Maio</option>
+    <option value="5">Junho</option>
+    <option value="6">Julho</option>
+    <option value="7">Agosto</option>
+    <option value="8">Setembro</option>
+    <option value="9">Outubro</option>
+    <option value="10">Novembro</option>
+    <option value="11">Dezembro</option>
+  </select>
+  <button onclick="filtrarPorDia()">Filtrar por Dia</button>
+  <button onclick="filtrarPorSemana()">Filtrar por Semana</button>
+
+  <canvas id="myBarChart" width="600" height="300"></canvas> <!-- Área onde o gráfico será renderizado -->
+
+  <script>
+    // Dados originais
+    const dataMensal = {
+      labels: [ // Rótulos do eixo X com todos os meses
+        'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+        'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+      ],
+      datasets: [{
+        label: 'Sorrisos Mensais',
+        data: [12, 19, 3, 5, 2, 3, 7, 8, 6, 4, 9, 10],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // Criando o contexto do gráfico (ligando o gráfico ao canvas)
+    const ctx = document.getElementById('myBarChart').getContext('2d');
+
+    // Criando o gráfico de barras
+    let myBarChart = new Chart(ctx, {
+      type: 'bar',
+      data: dataMensal,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // Função para mostrar os dados mensais completos
+    function mostrarDadosMensais() {
+      myBarChart.data = dataMensal;
+      myBarChart.update();
+    }
+
+    // Variável para armazenar o mês selecionado
+    let mesSelecionado = null;
+
+    // Função para atualizar o mês selecionado no seletor
+    function atualizarMesSelecionado() {
+      const select = document.getElementById('mesSelect');
+      mesSelecionado = select.value ? parseInt(select.value) : null;
+    }
+
+    // Dados diários para cada mês
+    const dataDiariaPorMes = [
+      [2, 3, 4, 1, 5, 2, 3], // Janeiro
+      [4, 5, 1, 2, 6, 3, 7], // Fevereiro
+      [6, 7, 5, 4, 2, 1, 8], // Março
+      // Continue para os outros meses...
+    ];
+
+    // Dados semanais para cada mês
+    const dataSemanalPorMes = [
+      [10, 15, 5, 8], // Janeiro
+      [12, 10, 7, 6], // Fevereiro
+      [8, 5, 10, 12], // Março
+      // Continue para os outros meses...
+    ];
+
+    // Funções para filtrar os dados
+    function filtrarPorDia() {
+      if (mesSelecionado !== null) {
+        myBarChart.data = {
+          labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+          datasets: [{
+            label: `Sorrisos Diários - ${dataMensal.labels[mesSelecionado]}`,
+            data: dataDiariaPorMes[mesSelecionado] || [],
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+          }]
+        };
+        myBarChart.update();
+      } else {
+        alert('Por favor, selecione um mês.');
+      }
+    }
+
+    function filtrarPorSemana() {
+      if (mesSelecionado !== null) {
+        myBarChart.data = {
+          labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
+          datasets: [{
+            label: `Sorrisos Semanais - ${dataMensal.labels[mesSelecionado]}`,
+            data: dataSemanalPorMes[mesSelecionado] || [],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
+        };
+        myBarChart.update();
+      } else {
+        alert('Por favor, selecione um mês.');
+      }
+    }
+  </script>
+</body>
+</html>
